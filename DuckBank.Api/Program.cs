@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Version = "v2.0",
+        Version = "v3.0",
         Title = "Ahorros Duckbank",
         Description = @"Cuentas de ahorro",
         Contact = new OpenApiContact
@@ -53,14 +53,15 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI(x =>
     {
-        x.SwaggerEndpoint("/swagger/v1/swagger.json", "");
+        x.SwaggerEndpoint("/swagger/v1/swagger.json", "/swagger/v1/swagger.json");
+        x.RoutePrefix = "";
     });
-}
+//}
 
 app.UseMiddleware<RequestResponseMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();

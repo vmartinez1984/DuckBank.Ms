@@ -57,7 +57,7 @@ namespace DuckBank.Api.Persistencia
 
                 Ahorro ahorro;
                 FilterDefinition<Ahorro> filter;
-                if (id.Length == 32)
+                if (id.Length == 36)
                     filter = Builders<Ahorro>.Filter.Eq("Guid", id);
                 else
                     filter = Builders<Ahorro>.Filter.Eq("Id", id);

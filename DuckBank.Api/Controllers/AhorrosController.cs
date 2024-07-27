@@ -11,7 +11,7 @@ namespace DuckBank.Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     public class AhorrosController : ControllerBase
-    {        
+    {
         private readonly ILogger<AhorrosController> _logger;
         private readonly AhorroRepositorio _repositorio;
 
@@ -20,17 +20,15 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="repositorio"></param>
-        /// <param name="clabeService"></param>
-        /// <param name="tarjetaDeDebitoService"></param>
         public AhorrosController(
             ILogger<AhorrosController> logger,
-            AhorroRepositorio repositorio    
+            AhorroRepositorio repositorio
         )
-        {              
+        {
             _logger = logger;
             _repositorio = repositorio;
 
-            _logger.LogInformation(new EventId(), "Hola mundo");
+            //_logger.LogInformation(new EventId(), "Hola mundo");
         }
 
         /// <summary>
@@ -54,7 +52,7 @@ namespace DuckBank.Api.Controllers
                 ClienteId = ahorroDtoIn.ClienteId,
                 Otros = ahorroDtoIn.Otros,
                 Interes = ahorroDtoIn.Interes
-            });            
+            });
 
             return Created($"Ahorros/{id}", new { id });
         }
@@ -70,7 +68,7 @@ namespace DuckBank.Api.Controllers
             AhorroConDetalleDto ahorroDto;
             Ahorro ahorro;
 
-            ahorro = await _repositorio.ObtenerPorIdAsync(ahorroId.ToString());
+            ahorro = await _repositorio.ObtenerPorIdAsync(ahorroId);
             if (ahorro == null)
                 return NotFound(new { Mensaje = "Ahorro no encontrado" });
             ahorroDto = new AhorroConDetalleDto
@@ -79,18 +77,20 @@ namespace DuckBank.Api.Controllers
                 Nombre = ahorro.Nombre,
                 Total = ahorro.Total,
                 Guid = ahorro.Guid,
-                ClienteId = ahorro.ClienteId,                
+                ClienteId = ahorro.ClienteId,
                 Depositos = ahorro.Depositos.Select(x => new MovimientoDto
                 {
                     Cantidad = x.Cantidad,
                     FechaDeRegistro = x.FechaDeRegistro,
-                    Id = x.Id,
+                    Concepto = x.Concepto,
+                    Referencia = x.Referencia
                 }).ToList(),
                 Retiros = ahorro.Retiros.Select(x => new MovimientoDto
                 {
                     Cantidad = x.Cantidad,
                     FechaDeRegistro = x.FechaDeRegistro,
-                    Id = x.Id
+                    Concepto = x.Concepto,
+                    Referencia = x.Referencia
                 }).ToList(),
                 Otros = ahorro.Otros
             };
@@ -116,7 +116,7 @@ namespace DuckBank.Api.Controllers
                 Nombre = ahorro.Nombre,
                 //Total = ahorro.Total,
                 Guid = ahorro.Guid,
-                ClienteId = ahorro.ClienteId,              
+                ClienteId = ahorro.ClienteId,
                 Otros = ahorro.Otros
             }).ToList();
 
@@ -130,7 +130,7 @@ namespace DuckBank.Api.Controllers
             });
         }
 
-               /// <summary>
+        /// <summary>
         /// Lista de ahorros paginados
         /// </summary>
         /// <param name="pager"></param>
@@ -146,9 +146,9 @@ namespace DuckBank.Api.Controllers
             {
                 Id = ahorro.Id,
                 Nombre = ahorro.Nombre,
-                //Total = ahorro.Total,
+                Total = ahorro.Total,
                 Guid = ahorro.Guid,
-                ClienteId = ahorro.ClienteId,              
+                ClienteId = ahorro.ClienteId,
                 Otros = ahorro.Otros
             }).ToList();
 
@@ -168,7 +168,7 @@ namespace DuckBank.Api.Controllers
             lista = (await _repositorio.ObtenerListaDeAhorrosPorClienteIdAsync(clienteId))
                 .Select(x => new AhorroDto
                 {
-                    ClienteId = x.ClienteId,                   
+                    ClienteId = x.ClienteId,
                     Guid = x.Guid,
                     Id = x.Id,
                     Interes = x.Interes,
@@ -197,7 +197,7 @@ namespace DuckBank.Api.Controllers
                 Cantidad = movimiento.Cantidad,
                 Concepto = movimiento.Concepto,
                 FechaDeRegistro = DateTime.Now,
-                Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
+                //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
             };
             ahorro.Depositos.Add(movimientoEntity);
@@ -232,7 +232,7 @@ namespace DuckBank.Api.Controllers
                 Cantidad = movimiento.Cantidad,
                 Concepto = movimiento.Concepto,
                 FechaDeRegistro = DateTime.Now,
-                Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
+                //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
             };
             ahorro.Retiros.Add(movimientoEntity);

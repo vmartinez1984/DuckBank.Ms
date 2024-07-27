@@ -21,18 +21,5 @@ namespace DuckBank.Api.Entidades
         public DateTime FechaDeRegistro { get; set; } = DateTime.Now;
 
         public string Estado { get; set; } = "Activo";
-    }
-
-    public class Movimiento
-    {
-        public decimal Cantidad { get; set; }
-
-        public string Id { get; set; }
-
-        public DateTime FechaDeRegistro { get; set; }
-
-        public string Concepto { get; set; }
-
-        public string Referencia { get; set; }
-    }
+    }    
 }

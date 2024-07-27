@@ -15,8 +15,6 @@
             </summary>
             <param name="logger"></param>
             <param name="repositorio"></param>
-            <param name="clabeService"></param>
-            <param name="tarjetaDeDebitoService"></param>
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.Post(DuckBank.Api.Dtos.AhorroDtoIn)">
             <summary>
