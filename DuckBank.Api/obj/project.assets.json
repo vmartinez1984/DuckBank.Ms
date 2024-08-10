@@ -2630,25 +2630,33 @@
     ]
   },
   "packageFolders": {
-    "/home/vmartinez/.nuget/packages/": {}
+    "C:\\Users\\vmartinez\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vmartinez/Desktop/DuckBank.Ahorros.Ms.Api/DuckBank.Api/DuckBank.Api.csproj",
+      "projectUniqueName": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\DuckBank.Api.csproj",
       "projectName": "DuckBank.Api",
-      "projectPath": "/home/vmartinez/Desktop/DuckBank.Ahorros.Ms.Api/DuckBank.Api/DuckBank.Api.csproj",
-      "packagesPath": "/home/vmartinez/.nuget/packages/",
-      "outputPath": "/home/vmartinez/Desktop/DuckBank.Ahorros.Ms.Api/DuckBank.Api/obj/",
+      "projectPath": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\DuckBank.Api.csproj",
+      "packagesPath": "C:\\Users\\vmartinez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/vmartinez/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\vmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/home/vmartinez/Documents/NugetLocal": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\vmartinez\\Documents\\NugetLocal": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2661,6 +2669,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2719,7 +2732,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.424/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -22,12 +22,24 @@ namespace DuckBank.Api.Persistencia
 
         internal async Task<int> AgregarAsync(Ahorro item)
         {
-            item.Id = ((int)await _collection.CountDocumentsAsync(_ => true)) + 1;
+            if (item.Id == 0)
+                item.Id = await ObtenerId();
             await _collection.InsertOneAsync(item);
 
             return item.Id;
         }
 
+        private async Task<int> ObtenerId()
+        {
+            var item = await
+            _collection
+            .Find(new BsonDocument()) // Puedes agregar filtros si es necesario
+            .SortByDescending(r => r.Id) // Ordenar por fecha de forma descendente
+            .FirstOrDefaultAsync();
+            ;
+
+            return item.Id + 1;
+        }
         internal async Task<List<Ahorro>> ObtenerAsync()
         {
             List<Ahorro> ahorros;
