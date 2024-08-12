@@ -189,7 +189,7 @@ namespace DuckBank.Api.Controllers
         public async Task<IActionResult> Depositar(string id, [FromBody] MovimientoDtoIn movimiento)
         {
             Ahorro ahorro;
-            Movimiento movimientoEntity;
+            Movimiento movimientoEntity;            
 
             ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
             movimientoEntity = new Movimiento
@@ -199,7 +199,9 @@ namespace DuckBank.Api.Controllers
                 FechaDeRegistro = DateTime.Now,
                 //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
-            };
+                SaldoInicial = ahorro.Total,
+                SaldoFinal = ahorro.Total + movimiento.Cantidad
+            };            
             ahorro.Depositos.Add(movimientoEntity);
             ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
             await _repositorio.ActualizarAsync(ahorro);
@@ -218,8 +220,9 @@ namespace DuckBank.Api.Controllers
         {
             Ahorro ahorro;
             Movimiento movimientoEntity;
+            decimal total;
 
-            ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
+            ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());            
             if (movimiento.Cantidad > ahorro.Total)
             {
                 return StatusCode(428, new
@@ -234,6 +237,8 @@ namespace DuckBank.Api.Controllers
                 FechaDeRegistro = DateTime.Now,
                 //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
+                SaldoFinal = ahorro.Total - movimiento.Cantidad,
+                SaldoInicial = ahorro.Total
             };
             ahorro.Retiros.Add(movimientoEntity);
             ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
