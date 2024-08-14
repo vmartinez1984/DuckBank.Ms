@@ -37,6 +37,8 @@ namespace DuckBank.Api.Persistencia
             .SortByDescending(r => r.Id) // Ordenar por fecha de forma descendente
             .FirstOrDefaultAsync();
             ;
+            if (item == null)
+            return 1;
 
             return item.Id + 1;
         }

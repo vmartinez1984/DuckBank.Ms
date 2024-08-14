@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b43f900f441d16ec328fb260412316ed4e58296c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30a5a12875f94b7c6524bf95e993c1b35a717a2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
