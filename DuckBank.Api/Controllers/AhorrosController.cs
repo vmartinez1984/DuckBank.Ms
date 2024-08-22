@@ -83,14 +83,18 @@ namespace DuckBank.Api.Controllers
                     Cantidad = x.Cantidad,
                     FechaDeRegistro = x.FechaDeRegistro,
                     Concepto = x.Concepto,
-                    Referencia = x.Referencia
+                    Referencia = x.Referencia,
+                    SaldoFinal = x.SaldoFinal,
+                    SaldoInicial = x.SaldoInicial
                 }).ToList(),
                 Retiros = ahorro.Retiros.Select(x => new MovimientoDto
                 {
                     Cantidad = x.Cantidad,
                     FechaDeRegistro = x.FechaDeRegistro,
                     Concepto = x.Concepto,
-                    Referencia = x.Referencia
+                    Referencia = x.Referencia,
+                    SaldoFinal = x.SaldoFinal,
+                    SaldoInicial = x.SaldoInicial
                 }).ToList(),
                 Otros = ahorro.Otros
             };
@@ -103,39 +107,38 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="pager"></param>
         /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] PagerEntity pager)
-        {
-            List<AhorroDto> ahorroDto;
-            List<Ahorro> ahorros;
+        //[HttpGet]
+        //public async Task<IActionResult> Get([FromQuery] PagerEntity pager)
+        //{
+        //    List<AhorroDto> ahorroDto;
+        //    List<Ahorro> ahorros;
 
-            ahorros = await _repositorio.GetAsync(pager);
-            ahorroDto = ahorros.Select(ahorro => new AhorroDto
-            {
-                Id = ahorro.Id,
-                Nombre = ahorro.Nombre,
-                //Total = ahorro.Total,
-                Guid = ahorro.Guid,
-                ClienteId = ahorro.ClienteId,
-                Otros = ahorro.Otros
-            }).ToList();
+        //    ahorros = await _repositorio.GetAsync(pager);
+        //    ahorroDto = ahorros.Select(ahorro => new AhorroDto
+        //    {
+        //        Id = ahorro.Id,
+        //        Nombre = ahorro.Nombre,
+        //        //Total = ahorro.Total,
+        //        Guid = ahorro.Guid,
+        //        ClienteId = ahorro.ClienteId,
+        //        Otros = ahorro.Otros
+        //    }).ToList();
 
-            return Ok(new
-            {
-                PaginaActual = pager.PageCurrent,
-                RegistrosPorPagina = pager.RecordsPerPage,
-                TotalDeRegistros = pager.TotalRecords,
-                TotalDeRegistrosFiltrados = pager.TotalRecordsFiltered,
-                ahorroDto
-            });
-        }
+        //    return Ok(new
+        //    {
+        //        PaginaActual = pager.PageCurrent,
+        //        RegistrosPorPagina = pager.RecordsPerPage,
+        //        TotalDeRegistros = pager.TotalRecords,
+        //        TotalDeRegistrosFiltrados = pager.TotalRecordsFiltered,
+        //        ahorroDto
+        //    });
+        //}
 
         /// <summary>
-        /// Lista de ahorros paginados
-        /// </summary>
-        /// <param name="pager"></param>
-        /// <returns></returns>
-        [HttpGet("Todos")]
+        /// Lista de ahorros 
+        /// </summary>        
+        /// <returns>ahorroDtos</returns>
+        [HttpGet()]
         public async Task<IActionResult> Get()
         {
             List<AhorroDto> ahorroDto;

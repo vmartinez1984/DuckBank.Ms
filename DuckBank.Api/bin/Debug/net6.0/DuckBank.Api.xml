@@ -30,19 +30,11 @@
             <param name="ahorroId"></param>
             <returns></returns>
         </member>
-        <member name="M:DuckBank.Api.Controllers.AhorrosController.Get(DuckBank.Api.Persistencia.PagerEntity)">
-            <summary>
-            Lista de ahorros paginados
-            </summary>
-            <param name="pager"></param>
-            <returns></returns>
-        </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.Get">
             <summary>
-            Lista de ahorros paginados
-            </summary>
-            <param name="pager"></param>
-            <returns></returns>
+            Lista de ahorros 
+            </summary>        
+            <returns>ahorroDtos</returns>
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerListaDeAhorrosPorClienteIdAsync(System.String)">
             <summary>

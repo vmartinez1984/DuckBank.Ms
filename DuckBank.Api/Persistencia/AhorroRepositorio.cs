@@ -64,18 +64,17 @@ namespace DuckBank.Api.Persistencia
             return ahorros;
         }
 
-        internal async Task<Ahorro> ObtenerPorIdAsync(string id)
+        internal async Task<Ahorro> ObtenerPorIdAsync(string idGuid)
         {
             try
             {
-
                 Ahorro ahorro;
-                FilterDefinition<Ahorro> filter;
-                if (id.Length == 36)
-                    filter = Builders<Ahorro>.Filter.Eq("Guid", id);
+                int id;
+
+                if(int.TryParse(idGuid, out id))
+                    ahorro = (await _collection.FindAsync<Ahorro>(x=> x.Id == id)).FirstOrDefault();
                 else
-                    filter = Builders<Ahorro>.Filter.Eq("Id", id);
-                ahorro = (await _collection.FindAsync(filter)).FirstOrDefault();
+                    ahorro = (await _collection.FindAsync<Ahorro>(x => x.Guid == idGuid)).FirstOrDefault();
 
                 return ahorro;
             }

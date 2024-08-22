@@ -22,6 +22,10 @@ namespace DuckBank.Api.Dtos
         public string Referencia { get; set; }
 
         public string Id { get; set; }
+
+        public decimal SaldoInicial { get; set; }
+
+        public decimal SaldoFinal { get; set; }
     }
 
     public class MovimientoDtoIn
