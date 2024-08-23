@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "i9pDOBTTDD5Exf624g9jsfzmFyhsiEbIjS7HzbCOex4=",
+  "Source": "DuckBank.Api",
+  "BasePath": "_content/DuckBank.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

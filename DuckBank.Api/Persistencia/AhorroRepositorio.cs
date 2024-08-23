@@ -42,13 +42,14 @@ namespace DuckBank.Api.Persistencia
 
             return item.Id + 1;
         }
+
         internal async Task<List<Ahorro>> ObtenerAsync()
         {
             List<Ahorro> ahorros;
             // FilterDefinition<Ahorro> filter;
 
             // filter = Builders<Ahorro>.Filter.Eq("ClienteId", clienteId);
-            ahorros = (await _collection.FindAsync(_ => true)).ToList();
+            ahorros = (await _collection.FindAsync(x=> x.Estado == "Activo")).ToList();
 
             return ahorros;
         }

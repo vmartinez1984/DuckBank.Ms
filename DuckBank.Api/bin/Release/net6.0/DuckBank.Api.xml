@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DuckBank.Api</name>
+    </assembly>
+    <members>
+        <member name="T:DuckBank.Api.Controllers.AhorrosController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.AhorrosController},DuckBank.Api.Persistencia.AhorroRepositorio)">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+            <param name="repositorio"></param>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Post(DuckBank.Api.Dtos.AhorroDtoIn)">
+            <summary>
+            Agregar ahorro
+            </summary>
+            <param name="ahorroDtoIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Get(System.String)">
+            <summary>
+            Obtener ahorro por ahorroId
+            </summary>
+            <param name="ahorroId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Get">
+            <summary>
+            Lista de ahorros 
+            </summary>        
+            <returns>ahorroDtos</returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerListaDeAhorrosPorClienteIdAsync(System.String)">
+            <summary>
+            Obtener lista de ahorros por cliente Id
+            </summary>
+            <param name="clienteId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Depositar(System.String,DuckBank.Api.Dtos.MovimientoDtoIn)">
+            <summary>
+            Depositar
+            </summary>
+            <param name="id"></param>
+            <param name="movimiento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Retirar(System.String,DuckBank.Api.Dtos.MovimientoDtoIn)">
+            <summary>
+            Retirar
+            </summary>
+            <param name="id"></param>
+            <param name="movimiento"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
