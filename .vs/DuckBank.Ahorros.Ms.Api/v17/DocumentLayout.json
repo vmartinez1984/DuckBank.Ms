@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\helpers\\httplogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\helpers\\httplogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\dtos\\ahorrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\dtos\\ahorrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\persistencia\\ahorrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\persistencia\\ahorrorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\desktop\\duckbank.ms\\duckbank.api\\dtos\\ahorrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\dtos\\ahorrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -87,6 +91,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "HttpLogger.cs",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Helpers\\HttpLogger.cs",
+              "RelativeDocumentMoniker": "DuckBank.Api\\Helpers\\HttpLogger.cs",
+              "ToolTip": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Helpers\\HttpLogger.cs",
+              "RelativeToolTip": "DuckBank.Api\\Helpers\\HttpLogger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T21:29:42.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Program.cs",
               "RelativeDocumentMoniker": "DuckBank.Api\\Program.cs",
@@ -94,12 +111,11 @@
               "RelativeToolTip": "DuckBank.Api\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T17:28:18.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-19T17:28:18.403Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "DuckBank.Api\\appsettings.Development.json",
@@ -107,12 +123,11 @@
               "RelativeToolTip": "DuckBank.Api\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-18T00:43:08.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-18T00:43:08.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\appsettings.json",
               "RelativeDocumentMoniker": "DuckBank.Api\\appsettings.json",
@@ -120,47 +135,44 @@
               "RelativeToolTip": "DuckBank.Api\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-18T00:43:05.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-18T00:43:05.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AhorrosController.cs",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Controllers\\AhorrosController.cs",
               "RelativeDocumentMoniker": "DuckBank.Api\\Controllers\\AhorrosController.cs",
               "ToolTip": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Controllers\\AhorrosController.cs",
               "RelativeToolTip": "DuckBank.Api\\Controllers\\AhorrosController.cs",
-              "ViewState": "AQIAAPoAAAAAAAAAAAAqwBsBAAASAAAA",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAwwKkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-22T18:31:19.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AhorroRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Persistencia\\AhorroRepositorio.cs",
               "RelativeDocumentMoniker": "DuckBank.Api\\Persistencia\\AhorroRepositorio.cs",
               "ToolTip": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Persistencia\\AhorroRepositorio.cs",
               "RelativeToolTip": "DuckBank.Api\\Persistencia\\AhorroRepositorio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG4AAABSAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAkwG4AAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T22:56:57.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T22:56:57.392Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "AhorroDto.cs",
               "DocumentMoniker": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Dtos\\AhorroDto.cs",
               "RelativeDocumentMoniker": "DuckBank.Api\\Dtos\\AhorroDto.cs",
               "ToolTip": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\Dtos\\AhorroDto.cs",
               "RelativeToolTip": "DuckBank.Api\\Dtos\\AhorroDto.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAxwCsAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T01:34:16.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T01:34:16.965Z"
             }
           ]
         },

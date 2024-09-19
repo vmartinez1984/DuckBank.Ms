@@ -78,6 +78,8 @@ namespace DuckBank.Api.Controllers
                 Total = ahorro.Total,
                 Guid = ahorro.Guid,
                 ClienteId = ahorro.ClienteId,
+                Interes = ahorro.Interes,
+                Estado = ahorro.Estado,
                 Depositos = ahorro.Depositos.Select(x => new MovimientoDto
                 {
                     Cantidad = x.Cantidad,
@@ -177,7 +179,8 @@ namespace DuckBank.Api.Controllers
                     Interes = x.Interes,
                     Nombre = x.Nombre,
                     Otros= x.Otros,
-                    Estado = x.Estado
+                    Estado = x.Estado,
+                    Total = x.Total                   
                 })
                 .ToList();
 

@@ -9,6 +9,7 @@ namespace DuckBank.Api.Dtos
         public decimal Total { get; set; }
         public List<MovimientoDto> Depositos { get; set; }
         public List<MovimientoDto> Retiros { get; set; }
+        public string Estado { get;  set; }
     }
 
     public class MovimientoDto
