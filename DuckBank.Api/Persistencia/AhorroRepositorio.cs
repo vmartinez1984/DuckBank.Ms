@@ -107,6 +107,15 @@ namespace DuckBank.Api.Persistencia
 
             return entities;
         }
+
+        internal async Task<Ahorro> ObtenerPorOtroAsync(string otro, string valor)
+        {
+            Ahorro ahorro;
+
+            ahorro = (await _collection.FindAsync(new BsonDocument($"Otros.{otro}",valor))).FirstOrDefault();
+
+            return ahorro;
+        }
     }
 
     public class PagerEntity

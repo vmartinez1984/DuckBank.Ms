@@ -175,7 +175,9 @@ namespace DuckBank.Api.Controllers
                     Guid = x.Guid,
                     Id = x.Id,
                     Interes = x.Interes,
-                    Nombre = x.Nombre
+                    Nombre = x.Nombre,
+                    Otros= x.Otros,
+                    Estado = x.Estado
                 })
                 .ToList();
 
@@ -192,7 +194,7 @@ namespace DuckBank.Api.Controllers
         public async Task<IActionResult> Depositar(string id, [FromBody] MovimientoDtoIn movimiento)
         {
             Ahorro ahorro;
-            Movimiento movimientoEntity;            
+            Movimiento movimientoEntity;
 
             ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
             movimientoEntity = new Movimiento
@@ -204,7 +206,7 @@ namespace DuckBank.Api.Controllers
                 Referencia = movimiento.Referencia,
                 SaldoInicial = ahorro.Total,
                 SaldoFinal = ahorro.Total + movimiento.Cantidad
-            };            
+            };
             ahorro.Depositos.Add(movimientoEntity);
             ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
             await _repositorio.ActualizarAsync(ahorro);
@@ -225,7 +227,7 @@ namespace DuckBank.Api.Controllers
             Movimiento movimientoEntity;
             decimal total;
 
-            ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());            
+            ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
             if (movimiento.Cantidad > ahorro.Total)
             {
                 return StatusCode(428, new
@@ -250,5 +252,45 @@ namespace DuckBank.Api.Controllers
             return Created("", movimiento);
         }
 
+        /// <summary>
+        /// Actualizar el valor o lo guarda en caso de no existir
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="otros"></param>
+        /// <returns></returns>
+        [HttpPost("{id}/Otros")]
+        public async Task<IActionResult> AgregarOtros(string id, Dictionary<string, string> otros)
+        {
+            Ahorro ahorro;
+
+            ahorro = await _repositorio.ObtenerPorIdAsync(id);
+            foreach (var item in otros)
+            {
+                var otro = ahorro.Otros.Where(x => x.Key == item.Key).FirstOrDefault();
+                if (otro.Key != null)
+                {
+                    ahorro.Otros[otro.Key] = item.Value;
+                }
+                else
+                {
+                    ahorro.Otros.Add(item.Key, item.Value);
+                }
+            }
+            await _repositorio.ActualizarAsync(ahorro);
+
+            return Accepted();
+        }
+
+        [HttpGet("Otros/{otro}/{valor}")]
+        public async Task<IActionResult> ObtenerPorOtros(string otro, string valor)
+        {
+            Ahorro ahorro;
+
+            ahorro = await _repositorio.ObtenerPorOtroAsync(otro, valor);
+            if (ahorro == null)
+                return NotFound();
+
+            return Ok(ahorro);
+        }
     }
 }

@@ -59,5 +59,13 @@
             <param name="movimiento"></param>
             <returns></returns>
         </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.AgregarOtros(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Actualizar el valor o lo guarda en caso de no existir
+            </summary>
+            <param name="id"></param>
+            <param name="otros"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

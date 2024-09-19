@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46b69d7c78f5f6d145e5cdd9e94eb7a702e4cece")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3ea10e72f95ebd4ac13e6f9e4fa412a38957f94")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuckBank.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
