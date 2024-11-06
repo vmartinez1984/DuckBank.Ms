@@ -1,21 +1,24 @@
-using DuckBank.Api.Helpers;
 using DuckBank.Api.Persistencia;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Serilog;
+using VMtz84.Logger;
 
 var builder = WebApplication.CreateBuilder(args);
+// Configura Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)  // Lee configuración desde appsettings.json
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateLogger();
+
+// Reemplaza el logger predeterminado por Serilog
+builder.Host.UseSerilog();
+//Muestra el error de serilog
+//SelfLog.Enable(Console.Error);
 
 // Add services to the container.
 builder.Services.AddScoped<AhorroRepositorio>();
-
-//RequestResponse
-builder.Services.AddTransient<RequestResponseRepository>();
-
-//Serilog
-builder.Services.AddLogging(logger => logger.AddSerilog());
-//Muestra el error de serilog
-//SelfLog.Enable(Console.Error);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

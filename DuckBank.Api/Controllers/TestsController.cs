@@ -49,15 +49,17 @@ namespace DuckBank.Api.Controllers
                 error = Guid.NewGuid().ToString();
             throw new Exception(error);
         }
-
         /// <summary>
         /// Hola mundo
         /// </summary>
         /// <returns></returns>
         [HttpGet("HolaMundo")]
-        public IActionResult HolaMundo()
+        public IActionResult HolaMundo(string saludo)
         {
-            return Ok("Hola mundo, MicroServicio de Ahorros");
+            if (string.IsNullOrEmpty(saludo))
+                saludo = "Hola mundo";
+
+            return Ok(new { Mensaje = saludo, Fecha = DateTime.Now, Id = Guid.NewGuid() });
         }
     }
 }

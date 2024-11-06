@@ -63,25 +63,13 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "Serilog.AspNetCore": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
-            "Serilog.Settings.Configuration": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Serilog.Sinks.Graylog": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Serilog.Sinks.MongoDB": {
-              "target": "Package",
-              "version": "[5.4.1, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "VMtz84.Logger": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
