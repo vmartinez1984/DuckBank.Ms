@@ -6,11 +6,19 @@ using Newtonsoft.Json;
 
 namespace DuckBank.Api.Helpers
 {
+    /// <summary>
+    /// Middleware para registrar las peticiones
+    /// </summary>
     public class RequestResponseMiddleware
     {
         private RequestDelegate _next;
         private readonly RequestResponseRepository _requestRepository;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="next"></param>
+        /// <param name="requestRepository"></param>
         public RequestResponseMiddleware(
             RequestDelegate next,
             RequestResponseRepository requestRepository
@@ -20,6 +28,11 @@ namespace DuckBank.Api.Helpers
             _requestRepository = requestRepository;
         }
 
+        /// <summary>
+        /// Aqui extraemos los datos
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         private async Task<RequestResponseEntity> AnalizeRequest(HttpContext context)
         {
             RequestResponseEntity requestDtoIn;
@@ -54,6 +67,12 @@ namespace DuckBank.Api.Helpers
             return requestDtoIn;
         }
 
+
+        /// <summary>
+        /// Aqui extraemos los datos y los registramos, response
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task InvokeAsync(HttpContext context)
         {
             try
@@ -104,22 +123,37 @@ namespace DuckBank.Api.Helpers
             requestDtoIn.ResponseHeader = JsonConvert.SerializeObject(context.Response.Headers).Replace("[", string.Empty).Replace("]", string.Empty);
             requestDtoIn.StatusCode = context.Response.StatusCode;
             requestDtoIn.ResponseDateRegistration = DateTime.Now;
+            requestDtoIn.RequestId = context.TraceIdentifier;
         }
     }
 
+    /// <summary>
+    /// Repositorio para mongoDb Donde se registrara la peticion
+    /// </summary>
     public class RequestResponseRepository
     {
         private readonly IMongoCollection<RequestResponseEntity> _collection;
+
+        /// <summary>
+        /// Colocamos la cadena de conexxion
+        /// </summary>
+        /// <param name="configurations"></param>
         public RequestResponseRepository(IConfiguration configurations)
         {
-            var mongoClient = new MongoClient(
-                configurations.GetConnectionString("mongoDbLogs")
-            );
-            //var nombreDeLaDb = configurations.GetSection("DuckBankAhorros").Value;
-            var mongoDatabase = mongoClient.GetDatabase("DuckBank_Logs");
+            string connetionString = configurations.GetSection("Serilog:WriteTo")
+                .GetChildren()
+                .FirstOrDefault(x => x["Name"] == "MongoDB")?["Args:databaseUrl"];
+            var mongoClient = new MongoClient(connetionString);
+            //Obtenermos el ultimo segmento para tener el nombre de la base de datos
+            var mongoDatabase = mongoClient.GetDatabase(connetionString.Split('/').Last());
             _collection = mongoDatabase.GetCollection<RequestResponseEntity>("RequestResponse");
         }
 
+        /// <summary>
+        /// Se agregan los datos de la petición
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<string> AgregarAsync(RequestResponseEntity entity)
         {
             try
@@ -136,6 +170,9 @@ namespace DuckBank.Api.Helpers
         }
     }
 
+    /// <summary>
+    /// Clase base para la colección
+    /// </summary>
     public class RequestResponseEntity
     {
         [BsonId]
@@ -149,6 +186,7 @@ namespace DuckBank.Api.Helpers
         public string ResponseBody { get; internal set; }
         public string ResponseHeader { get; internal set; }
         public int StatusCode { get; internal set; }
-        public DateTime ResponseDateRegistration { get; internal set; }
+        public DateTime ResponseDateRegistration { get; set; }
+        public string RequestId { get; set; }
     }
 }

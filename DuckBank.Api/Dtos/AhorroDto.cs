@@ -57,7 +57,7 @@ namespace DuckBank.Api.Dtos
         [MaxLength(150)]
         public string Nombre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "EL numero de cliente es un dato obligatorio")]
         [MaxLength(50)]
         public string ClienteId { get; set; }
 

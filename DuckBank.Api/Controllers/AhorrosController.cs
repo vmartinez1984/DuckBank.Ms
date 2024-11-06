@@ -284,6 +284,12 @@ namespace DuckBank.Api.Controllers
             return Accepted();
         }
 
+        /// <summary>
+        /// Obtener por otro
+        /// </summary>
+        /// <param name="otro"></param>
+        /// <param name="valor"></param>
+        /// <returns></returns>
         [HttpGet("Otros/{otro}/{valor}")]
         public async Task<IActionResult> ObtenerPorOtros(string otro, string valor)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AuQpVptyHQ0=",
+  "dgSpecHash": "lLhsVZDgCeE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vmartinez\\Desktop\\DuckBank.Ms\\DuckBank.Api\\DuckBank.Api.csproj",
+  "projectFilePath": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Api\\DuckBank.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vmartinez\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\vmartinez\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

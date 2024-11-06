@@ -67,5 +67,114 @@
             <param name="otros"></param>
             <returns></returns>
         </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerPorOtros(System.String,System.String)">
+            <summary>
+            Obtener por otro
+            </summary>
+            <param name="otro"></param>
+            <param name="valor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Controllers.TestsController">
+            <summary>
+            Controller para pruebas
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.TestsController})">
+            <summary>
+            Contructor
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.Get">
+            <summary>
+            Obtiene el ambiente que tiene registrado en el appSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.Delete(System.String)">
+            <summary>
+            Prueba para registrar errores
+            </summary>
+            <param name="error"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.HolaMundo">
+            <summary>
+            Hola mundo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Helpers.ExceptionMiddleware">
+            <summary>
+            Registro de excepciones
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Helpers.ExceptionMiddleware},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Se incializa los servicios
+            </summary>
+            <param name="next"></param>
+            <param name="logger"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Aqui se cachan las excepciones y se registran el la base de datos que este configurada en el serilog
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Helpers.RequestResponseMiddleware">
+            <summary>
+            Middleware para registrar las peticiones
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.RequestResponseMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,DuckBank.Api.Helpers.RequestResponseRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="next"></param>
+            <param name="requestRepository"></param>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.RequestResponseMiddleware.AnalizeRequest(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Aqui extraemos los datos
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.RequestResponseMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Aqui extraemos los datos y los registramos, response
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Helpers.RequestResponseRepository">
+            <summary>
+            Repositorio para mongoDb Donde se registrara la peticion
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.RequestResponseRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Colocamos la cadena de conexxion
+            </summary>
+            <param name="configurations"></param>
+        </member>
+        <member name="M:DuckBank.Api.Helpers.RequestResponseRepository.AgregarAsync(DuckBank.Api.Helpers.RequestResponseEntity)">
+            <summary>
+            Se agregan los datos de la petición
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Helpers.RequestResponseEntity">
+            <summary>
+            Clase base para la colección
+            </summary>
+        </member>
     </members>
 </doc>
