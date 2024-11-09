@@ -10,8 +10,10 @@ namespace DuckBank.Api.Persistencia
 
         public AhorroRepositorio(IConfiguration configurations)
         {
-            var mongoClient = new MongoClient(configurations.GetConnectionString("mongoDb"));
-            var mongoDatabase = mongoClient.GetDatabase(configurations.GetConnectionString("mongoDbNombre"));
+            var conectionString = configurations.GetConnectionString("MongoDb");
+            var mongoClient = new MongoClient(conectionString);
+            var nombreDeLaDb = conectionString.Split("/").Last().Split("?").First();
+            var mongoDatabase = mongoClient.GetDatabase(nombreDeLaDb);
             _collection = mongoDatabase.GetCollection<Ahorro>("Ahorros");
         }
 

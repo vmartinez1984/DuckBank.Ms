@@ -270,6 +270,7 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\b
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Serilog.Sinks.File.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Serilog.Sinks.MongoDB.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\SharpCompress.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Snappier.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -278,6 +279,7 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\b
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\VMtz84.Logger.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\ZstdSharp.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
@@ -306,5 +308,3 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\o
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net6.0\DuckBank.Api.pdb
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net6.0\DuckBank.Api.genruntimeconfig.cache
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net6.0\ref\DuckBank.Api.dll
-C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
-C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net6.0\VMtz84.Logger.dll

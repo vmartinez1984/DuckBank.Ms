@@ -2,9 +2,17 @@ using DuckBank.Api.Persistencia;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Serilog;
-using VMtz84.Logger;
+using VMtz84.Logger.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuración de archivos de appsettings según el entorno
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
 // Configura Serilog
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)  // Lee configuración desde appsettings.json
@@ -72,4 +80,4 @@ app.MapControllers();
 app.Run();
 
 // Asegúrate de cerrar el logger al final del programa
-Log.CloseAndFlush();
+//Log.CloseAndFlush();

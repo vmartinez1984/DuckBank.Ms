@@ -13,11 +13,21 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "",
       "applicationUrl": "https://localhost:7089;http://localhost:5216",
-      // "environmentVariables": {
-      //   "ASPNETCORE_ENVIRONMENT": "Development"
-      // }
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "DuckBank.Dev.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "",
+      "applicationUrl": "https://localhost:7089;http://localhost:5216",
+       "environmentVariables": {
+         "ASPNETCORE_ENVIRONMENT": "Development"
+       }
     },
     "IIS Express": {
       "commandName": "IISExpress",

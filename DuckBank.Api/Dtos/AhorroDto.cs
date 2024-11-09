@@ -35,9 +35,7 @@ namespace DuckBank.Api.Dtos
 
         public string Concepto { get; set; }
 
-        public string Referencia { get; set; }
-
-        public string Id { get; set; }
+        public string Referencia { get; set; }        
     }
 
     public class AhorroDto : AhorroDtoIn

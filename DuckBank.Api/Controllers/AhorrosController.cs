@@ -51,7 +51,8 @@ namespace DuckBank.Api.Controllers
                 Nombre = ahorroDtoIn.Nombre,
                 ClienteId = ahorroDtoIn.ClienteId,
                 Otros = ahorroDtoIn.Otros,
-                Interes = ahorroDtoIn.Interes
+                Interes = ahorroDtoIn.Interes,
+                Estado = "Activo"
             });
 
             return Created($"Ahorros/{id}", new { id });
@@ -105,38 +106,6 @@ namespace DuckBank.Api.Controllers
         }
 
         /// <summary>
-        /// Lista de ahorros paginados
-        /// </summary>
-        /// <param name="pager"></param>
-        /// <returns></returns>
-        //[HttpGet]
-        //public async Task<IActionResult> Get([FromQuery] PagerEntity pager)
-        //{
-        //    List<AhorroDto> ahorroDto;
-        //    List<Ahorro> ahorros;
-
-        //    ahorros = await _repositorio.GetAsync(pager);
-        //    ahorroDto = ahorros.Select(ahorro => new AhorroDto
-        //    {
-        //        Id = ahorro.Id,
-        //        Nombre = ahorro.Nombre,
-        //        //Total = ahorro.Total,
-        //        Guid = ahorro.Guid,
-        //        ClienteId = ahorro.ClienteId,
-        //        Otros = ahorro.Otros
-        //    }).ToList();
-
-        //    return Ok(new
-        //    {
-        //        PaginaActual = pager.PageCurrent,
-        //        RegistrosPorPagina = pager.RecordsPerPage,
-        //        TotalDeRegistros = pager.TotalRecords,
-        //        TotalDeRegistrosFiltrados = pager.TotalRecordsFiltered,
-        //        ahorroDto
-        //    });
-        //}
-
-        /// <summary>
         /// Lista de ahorros 
         /// </summary>        
         /// <returns>ahorroDtos</returns>
@@ -178,9 +147,9 @@ namespace DuckBank.Api.Controllers
                     Id = x.Id,
                     Interes = x.Interes,
                     Nombre = x.Nombre,
-                    Otros= x.Otros,
+                    Otros = x.Otros,
                     Estado = x.Estado,
-                    Total = x.Total                   
+                    Total = x.Total
                 })
                 .ToList();
 
@@ -200,12 +169,15 @@ namespace DuckBank.Api.Controllers
             Movimiento movimientoEntity;
 
             ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
+            if (ahorro is null)
+                return NotFound(new { Mensaje = $"Ahorro: {id} no encontrado", Fecha = DateTime.Now });
+            if (string.IsNullOrEmpty(movimiento.Referencia))
+                movimiento.Referencia = Guid.NewGuid().ToString();
             movimientoEntity = new Movimiento
             {
                 Cantidad = movimiento.Cantidad,
                 Concepto = movimiento.Concepto,
                 FechaDeRegistro = DateTime.Now,
-                //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
                 SaldoInicial = ahorro.Total,
                 SaldoFinal = ahorro.Total + movimiento.Cantidad
@@ -228,7 +200,6 @@ namespace DuckBank.Api.Controllers
         {
             Ahorro ahorro;
             Movimiento movimientoEntity;
-            decimal total;
 
             ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
             if (movimiento.Cantidad > ahorro.Total)
@@ -238,12 +209,13 @@ namespace DuckBank.Api.Controllers
                     Mensaje = "No hay chivo"
                 });
             }
+            if (string.IsNullOrEmpty(movimiento.Referencia))
+                movimiento.Referencia = Guid.NewGuid().ToString();
             movimientoEntity = new Movimiento
             {
                 Cantidad = movimiento.Cantidad,
                 Concepto = movimiento.Concepto,
                 FechaDeRegistro = DateTime.Now,
-                //Id = string.IsNullOrEmpty(movimiento.Id) ? Guid.NewGuid().ToString() : movimiento.Id,
                 Referencia = movimiento.Referencia,
                 SaldoFinal = ahorro.Total - movimiento.Cantidad,
                 SaldoInicial = ahorro.Total
