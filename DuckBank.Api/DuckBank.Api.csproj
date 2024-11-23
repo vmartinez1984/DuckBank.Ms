@@ -10,14 +10,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Include="Readme.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Readme.md</DependentUpon>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />		
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -27,22 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Readme.md">
-	    <Generator>TextTemplatingFileGenerator</Generator>
-	    <LastGenOutput>Readme.cs</LastGenOutput>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Readme.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Readme.md</DependentUpon>
-	  </Compile>
 	</ItemGroup>
 
 </Project>
