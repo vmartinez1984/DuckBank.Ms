@@ -11,24 +11,18 @@ namespace DuckBank.Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     public class AhorrosController : ControllerBase
-    {
-        private readonly ILogger<AhorrosController> _logger;
+    {        
         private readonly AhorroRepositorio _repositorio;
 
         /// <summary>
         /// 
-        /// </summary>
-        /// <param name="logger"></param>
+        /// </summary>        
         /// <param name="repositorio"></param>
-        public AhorrosController(
-            ILogger<AhorrosController> logger,
+        public AhorrosController(            
             AhorroRepositorio repositorio
         )
-        {
-            _logger = logger;
-            _repositorio = repositorio;
-
-            //_logger.LogInformation(new EventId(), "Hola mundo");
+        {     
+            _repositorio = repositorio;         
         }
 
         /// <summary>
@@ -81,6 +75,7 @@ namespace DuckBank.Api.Controllers
                 ClienteId = ahorro.ClienteId,
                 Interes = ahorro.Interes,
                 Estado = ahorro.Estado,
+                FechaDeRegistro = ahorro.FechaDeRegistro,
                 Depositos = ahorro.Depositos.Select(x => new MovimientoDto
                 {
                     Cantidad = x.Cantidad,
@@ -123,7 +118,10 @@ namespace DuckBank.Api.Controllers
                 Total = ahorro.Total,
                 Guid = ahorro.Guid,
                 ClienteId = ahorro.ClienteId,
-                Otros = ahorro.Otros
+                Otros = ahorro.Otros,
+                Estado = ahorro.Estado,
+                Interes = ahorro.Interes,
+                FechaDeRegistro = ahorro.FechaDeRegistro
             }).ToList();
 
             return Ok(ahorroDto);
@@ -149,7 +147,8 @@ namespace DuckBank.Api.Controllers
                     Nombre = x.Nombre,
                     Otros = x.Otros,
                     Estado = x.Estado,
-                    Total = x.Total
+                    Total = x.Total,
+                    FechaDeRegistro = x.FechaDeRegistro
                 })
                 .ToList();
 

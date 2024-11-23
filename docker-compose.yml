@@ -1,0 +1,25 @@
+services:
+  duckbank.api:
+    image: ${DOCKER_REGISTRY-}duckbankapi
+    build:
+      context: .
+      dockerfile: DuckBank.Api/Dockerfile
+    depends_on:
+        - mongodb  # Esto asegura que MongoDB este listo antes de iniciar el servicio 
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:latest
+    #container_name: mongodb
+    ports:
+      - "27017:27017"  # Mapea el puerto para acceder a MongoDB desde fuera del contenedor
+    environment:      
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

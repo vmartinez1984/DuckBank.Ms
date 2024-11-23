@@ -1,7 +1,6 @@
 using DuckBank.Api.Persistencia;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using Serilog;
 using VMtz84.Logger.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,18 +11,6 @@ builder.Configuration
     //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
     .AddEnvironmentVariables();
-
-// Configura Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)  // Lee configuración desde appsettings.json
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .CreateLogger();
-
-// Reemplaza el logger predeterminado por Serilog
-builder.Host.UseSerilog();
-//Muestra el error de serilog
-//SelfLog.Enable(Console.Error);
 
 // Add services to the container.
 builder.Services.AddScoped<AhorroRepositorio>();
@@ -78,6 +65,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-// Asegúrate de cerrar el logger al final del programa
-//Log.CloseAndFlush();

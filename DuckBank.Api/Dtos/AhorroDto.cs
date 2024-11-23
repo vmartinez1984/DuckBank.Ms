@@ -10,6 +10,7 @@ namespace DuckBank.Api.Dtos
         public List<MovimientoDto> Depositos { get; set; }
         public List<MovimientoDto> Retiros { get; set; }
         public string Estado { get;  set; }
+        public DateTime FechaDeRegistro { get; internal set; }
     }
 
     public class MovimientoDto
@@ -43,6 +44,7 @@ namespace DuckBank.Api.Dtos
         public int Id { get; set; }
         public decimal Total { get; set; }
         public string Estado { get; internal set; }
+        public DateTime FechaDeRegistro { get; internal set; }
     }
 
     public class AhorroDtoIn

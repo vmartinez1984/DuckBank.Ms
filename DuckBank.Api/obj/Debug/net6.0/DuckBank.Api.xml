@@ -9,11 +9,10 @@
             
             </summary>
         </member>
-        <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.AhorrosController},DuckBank.Api.Persistencia.AhorroRepositorio)">
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(DuckBank.Api.Persistencia.AhorroRepositorio)">
             <summary>
             
-            </summary>
-            <param name="logger"></param>
+            </summary>        
             <param name="repositorio"></param>
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.Post(DuckBank.Api.Dtos.AhorroDtoIn)">

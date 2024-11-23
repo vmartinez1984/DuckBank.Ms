@@ -1,0 +1,186 @@
+[
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Post",
+    "RelativePath": "api/Ahorros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ahorroDtoIn",
+        "Type": "DuckBank.Api.Dtos.AhorroDtoIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Get",
+    "RelativePath": "api/Ahorros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Get",
+    "RelativePath": "api/Ahorros/{ahorroId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ahorroId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Depositar",
+    "RelativePath": "api/Ahorros/{id}/Depositos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "movimiento",
+        "Type": "DuckBank.Api.Dtos.MovimientoDtoIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "AgregarOtros",
+    "RelativePath": "api/Ahorros/{id}/Otros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "otros",
+        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Retirar",
+    "RelativePath": "api/Ahorros/{id}/Retiros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "movimiento",
+        "Type": "DuckBank.Api.Dtos.MovimientoDtoIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "ObtenerListaDeAhorrosPorClienteIdAsync",
+    "RelativePath": "api/Ahorros/Clientes/{clienteId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "ObtenerPorOtros",
+    "RelativePath": "api/Ahorros/Otros/{otro}/{valor}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "otro",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "valor",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.TestsController",
+    "Method": "Get",
+    "RelativePath": "api/Tests/Ambiente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.TestsController",
+    "Method": "Delete",
+    "RelativePath": "api/Tests/Errores",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "error",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.TestsController",
+    "Method": "HolaMundo",
+    "RelativePath": "api/Tests/HolaMundo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "saludo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

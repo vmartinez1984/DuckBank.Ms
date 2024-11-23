@@ -1,0 +1,398 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ahorros Duckbank",
+    "description": "Cuentas de ahorro",
+    "contact": {
+      "name": "Víctor Martínez",
+      "url": "mailto:ahal_tocob@hotmail.com"
+    },
+    "version": "v3.0"
+  },
+  "paths": {
+    "/api/Ahorros": {
+      "post": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Agregar ahorro",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Lista de ahorros",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/{ahorroId}": {
+      "get": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Obtener ahorro por ahorroId",
+        "parameters": [
+          {
+            "name": "ahorroId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/Clientes/{clienteId}": {
+      "get": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Obtener lista de ahorros por cliente Id",
+        "parameters": [
+          {
+            "name": "clienteId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/{id}/Depositos": {
+      "post": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Depositar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/{id}/Retiros": {
+      "post": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Retirar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/{id}/Otros": {
+      "post": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Actualizar el valor o lo guarda en caso de no existir",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ahorros/Otros/{otro}/{valor}": {
+      "get": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Obtener por otro",
+        "parameters": [
+          {
+            "name": "otro",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "valor",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tests/Ambiente": {
+      "get": {
+        "tags": [
+          "Tests"
+        ],
+        "summary": "Obtiene el ambiente que tiene registrado en el appSettings",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tests/Errores": {
+      "delete": {
+        "tags": [
+          "Tests"
+        ],
+        "summary": "Prueba para registrar errores",
+        "parameters": [
+          {
+            "name": "error",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tests/HolaMundo": {
+      "get": {
+        "tags": [
+          "Tests"
+        ],
+        "summary": "Hola mundo",
+        "parameters": [
+          {
+            "name": "saludo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AhorroDtoIn": {
+        "required": [
+          "clienteId",
+          "guid",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "guid": {
+            "maxLength": 36,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nombre": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "clienteId": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "interes": {
+            "type": "number",
+            "format": "double"
+          },
+          "otros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MovimientoDtoIn": {
+        "type": "object",
+        "properties": {
+          "cantidad": {
+            "type": "number",
+            "format": "double"
+          },
+          "concepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "referencia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
