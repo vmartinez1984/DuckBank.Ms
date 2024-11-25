@@ -272,5 +272,25 @@ namespace DuckBank.Api.Controllers
 
             return Ok(ahorro);
         }
+
+        /// <summary>
+        /// Actializar datos del ahorro
+        /// </summary>
+        /// <param name="ahorroId"></param>
+        /// <param name="ahorro"></param>
+        /// <returns></returns>
+        [HttpPut("{ahorroId}")]
+        public async Task Actualizar(string ahorroId, AhorroDtoUpd ahorro)
+        {
+            Ahorro ahorroOriginal;
+
+            ahorroOriginal = await _repositorio.ObtenerPorIdAsync(ahorroId);
+            ahorroOriginal.ClienteId = ahorro.ClienteId;
+            ahorroOriginal.Nombre = ahorro.Nombre;
+            ahorroOriginal.Estado = ahorro.Estado;
+            ahorroOriginal.Interes = ahorro.Interes;
+
+            await _repositorio.ActualizarAsync(ahorroOriginal);
+        }
     }
 }

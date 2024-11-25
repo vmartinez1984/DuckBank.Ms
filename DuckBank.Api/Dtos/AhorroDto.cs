@@ -64,5 +64,21 @@ namespace DuckBank.Api.Dtos
         public decimal Interes { get; set; } = 0;
 
         public Dictionary<string, string> Otros { get; set; } = new Dictionary<string, string>();
+        public string Estado { get;  set; }
+    }
+
+    public class AhorroDtoUpd
+    {        
+        [Required]
+        [MaxLength(150)]
+        public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "EL numero de cliente es un dato obligatorio")]
+        [MaxLength(50)]
+        public string ClienteId { get; set; }
+
+        public decimal Interes { get; set; } = 0;
+     
+        public string Estado { get; set; }
     }
 }

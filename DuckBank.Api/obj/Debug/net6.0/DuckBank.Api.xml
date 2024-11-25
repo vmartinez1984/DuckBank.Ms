@@ -74,6 +74,14 @@
             <param name="valor"></param>
             <returns></returns>
         </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Actualizar(System.String,DuckBank.Api.Dtos.AhorroDtoUpd)">
+            <summary>
+            Actializar datos del ahorro
+            </summary>
+            <param name="ahorroId"></param>
+            <param name="ahorro"></param>
+            <returns></returns>
+        </member>
         <member name="T:DuckBank.Api.Controllers.TestsController">
             <summary>
             Controller para pruebas

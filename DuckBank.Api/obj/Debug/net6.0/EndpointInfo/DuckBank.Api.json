@@ -76,6 +76,48 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Actializar datos del ahorro",
+        "parameters": [
+          {
+            "name": "ahorroId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoUpd"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoUpd"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AhorroDtoUpd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Ahorros/Clientes/{clienteId}": {
@@ -370,6 +412,38 @@
               "type": "string",
               "nullable": true
             },
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AhorroDtoUpd": {
+        "required": [
+          "clienteId",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "clienteId": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "interes": {
+            "type": "number",
+            "format": "double"
+          },
+          "estado": {
+            "type": "string",
             "nullable": true
           }
         },

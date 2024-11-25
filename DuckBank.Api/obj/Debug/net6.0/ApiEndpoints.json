@@ -43,6 +43,33 @@
   },
   {
     "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Ahorros/{ahorroId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ahorroId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ahorro",
+        "Type": "DuckBank.Api.Dtos.AhorroDtoUpd",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
     "Method": "Depositar",
     "RelativePath": "api/Ahorros/{id}/Depositos",
     "HttpMethod": "POST",

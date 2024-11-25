@@ -9,11 +9,10 @@
             
             </summary>
         </member>
-        <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.AhorrosController},DuckBank.Api.Persistencia.AhorroRepositorio)">
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(DuckBank.Api.Persistencia.AhorroRepositorio)">
             <summary>
             
-            </summary>
-            <param name="logger"></param>
+            </summary>        
             <param name="repositorio"></param>
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.Post(DuckBank.Api.Dtos.AhorroDtoIn)">
@@ -65,6 +64,54 @@
             </summary>
             <param name="id"></param>
             <param name="otros"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerPorOtros(System.String,System.String)">
+            <summary>
+            Obtener por otro
+            </summary>
+            <param name="otro"></param>
+            <param name="valor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Actualizar(System.String,DuckBank.Api.Dtos.AhorroDtoUpd)">
+            <summary>
+            Actializar datos del ahorro
+            </summary>
+            <param name="ahorroId"></param>
+            <param name="ahorro"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Controllers.TestsController">
+            <summary>
+            Controller para pruebas
+            </summary>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.TestsController})">
+            <summary>
+            Contructor
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.Get">
+            <summary>
+            Obtiene el ambiente que tiene registrado en el appSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.Delete(System.String)">
+            <summary>
+            Prueba para registrar errores
+            </summary>
+            <param name="error"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:DuckBank.Api.Controllers.TestsController.HolaMundo(System.String)">
+            <summary>
+            Hola mundo
+            </summary>
             <returns></returns>
         </member>
     </members>

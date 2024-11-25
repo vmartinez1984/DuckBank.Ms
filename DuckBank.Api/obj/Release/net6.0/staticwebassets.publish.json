@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "6B4whBDEWSw6iZ/OVgoqHM11M6NCbkRFbexyz8n+aDI=",
+  "Hash": "gAVZ0v6bMcA2hOEaZ1GVHpMk0AzLPdtcKyNXBivii48=",
   "Source": "DuckBank.Api",
   "BasePath": "_content/DuckBank.Api",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

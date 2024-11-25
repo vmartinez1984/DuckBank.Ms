@@ -15,6 +15,7 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\b
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
@@ -61,4 +62,3 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\o
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.pdb
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.genruntimeconfig.cache
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\ref\DuckBank.Api.dll
-C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
