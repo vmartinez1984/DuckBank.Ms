@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "DuckBank.Api/1.0.0": {
         "dependencies": {
+          "DuckBank.BusinessLayer": "1.0.0",
+          "DuckBank.Core": "1.0.0",
           "Microsoft.Extensions.Http": "9.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.21.0",
           "Newtonsoft.Json": "13.0.3",
@@ -372,6 +374,42 @@
             "fileVersion": "0.7.3.0"
           }
         }
+      },
+      "DuckBank.BusinessLayer/1.0.0": {
+        "dependencies": {
+          "DuckBank.Core": "1.0.0",
+          "DuckBank.Persistence": "1.0.0"
+        },
+        "runtime": {
+          "DuckBank.BusinessLayer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DuckBank.Core/1.0.0": {
+        "dependencies": {
+          "MongoDB.Bson": "3.0.0"
+        },
+        "runtime": {
+          "DuckBank.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DuckBank.Persistence/1.0.0": {
+        "dependencies": {
+          "DuckBank.Core": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "MongoDB.Driver": "3.0.0"
+        },
+        "runtime": {
+          "DuckBank.Persistence.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -660,6 +698,21 @@
       "sha512": "sha512-U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
       "path": "zstdsharp.port/0.7.3",
       "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
+    },
+    "DuckBank.BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuckBank.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DuckBank.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

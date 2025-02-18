@@ -38,42 +38,44 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Ahorros"
-        ],
-        "summary": "Lista de ahorros",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Ahorros/{ahorroId}": {
-      "get": {
-        "tags": [
-          "Ahorros"
-        ],
-        "summary": "Obtener ahorro por ahorroId",
-        "parameters": [
-          {
-            "name": "ahorroId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AhorroDto"
+                }
+              }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
@@ -146,121 +148,162 @@
         }
       }
     },
-    "/api/Ahorros/{id}/Retiros": {
+    "/api/Clientes": {
       "post": {
         "tags": [
-          "Ahorros"
+          "Clientes"
         ],
-        "summary": "Retirar",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "Agregar clientes",
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MovimientoDtoIn"
+                "$ref": "#/components/schemas/ClienteDtoIn"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MovimientoDtoIn"
+                "$ref": "#/components/schemas/ClienteDtoIn"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MovimientoDtoIn"
+                "$ref": "#/components/schemas/ClienteDtoIn"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Ahorros/{id}/Otros": {
-      "post": {
-        "tags": [
-          "Ahorros"
-        ],
-        "summary": "Actualizar el valor o lo guarda en caso de no existir",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
+            "description": "Elemento existente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteDto"
                 }
               }
-            },
-            "text/json": {
-              "schema": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Ahorros/Otros/{otro}/{valor}": {
-      "get": {
-        "tags": [
-          "Ahorros"
-        ],
-        "summary": "Obtener por otro",
-        "parameters": [
-          {
-            "name": "otro",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           },
+          "201": {
+            "description": "Elemento creado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Obtener todos",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Clientes/{id}": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Obtener por id",
+        "parameters": [
           {
-            "name": "valor",
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Actualizar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteDtoIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteDtoIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteDtoIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Clientes/Correos/{correo}": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Obtener cliente por correo",
+        "parameters": [
+          {
+            "name": "correo",
             "in": "path",
             "description": "",
             "required": true,
@@ -337,9 +380,9 @@
   },
   "components": {
     "schemas": {
-      "AhorroDtoIn": {
+      "AhorroDto": {
         "required": [
-          "clienteId",
+          "clienteEncodedKey",
           "guid",
           "nombre"
         ],
@@ -355,7 +398,7 @@
             "minLength": 1,
             "type": "string"
           },
-          "clienteId": {
+          "clienteEncodedKey": {
             "maxLength": 50,
             "minLength": 1,
             "type": "string"
@@ -371,6 +414,242 @@
               "nullable": true
             },
             "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDeRegistro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AhorroDtoIn": {
+        "required": [
+          "clienteEncodedKey",
+          "guid",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "guid": {
+            "maxLength": 36,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nombre": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "clienteEncodedKey": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "interes": {
+            "type": "number",
+            "format": "double"
+          },
+          "otros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteDto": {
+        "required": [
+          "correo",
+          "direccion",
+          "nombre",
+          "primerApellido",
+          "telefono"
+        ],
+        "type": "object",
+        "properties": {
+          "primerApellido": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "segundoApellido": {
+            "maxLength": 120,
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "encodedKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "telefono": {
+            "maxLength": 10,
+            "minLength": 10,
+            "type": "string"
+          },
+          "direccion": {
+            "$ref": "#/components/schemas/DireccionDto"
+          },
+          "otros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteDtoIn": {
+        "required": [
+          "correo",
+          "direccion",
+          "nombre",
+          "primerApellido",
+          "telefono"
+        ],
+        "type": "object",
+        "properties": {
+          "primerApellido": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "segundoApellido": {
+            "maxLength": 120,
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "encodedKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "telefono": {
+            "maxLength": 10,
+            "minLength": 10,
+            "type": "string"
+          },
+          "direccion": {
+            "$ref": "#/components/schemas/DireccionDto"
+          },
+          "otros": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DireccionDto": {
+        "required": [
+          "alcaldia",
+          "calleYNumero",
+          "codigoPostal",
+          "colonia",
+          "coordenadasGps",
+          "estado",
+          "referencia"
+        ],
+        "type": "object",
+        "properties": {
+          "alcaldia": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "calleYNumero": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "codigoPostal": {
+            "maxLength": 5,
+            "minLength": 5,
+            "type": "string"
+          },
+          "colonia": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "coordenadasGps": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          },
+          "estado": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "referencia": {
+            "maxLength": 120,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IdDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "encodedKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDeRegistro": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -386,12 +665,39 @@
             "type": "string",
             "nullable": true
           },
-          "referencia": {
+          "encodedKey": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
       }
     }
   }

@@ -41,7 +41,6 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\o
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.AssemblyInfoInputs.cache
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.AssemblyInfo.cs
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.csproj.CoreCompileInputs.cache
-C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.sourcelink.json
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\scopedcss\bundle\DuckBank.Api.styles.css
@@ -62,3 +61,10 @@ C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\o
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.pdb
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.genruntimeconfig.cache
 C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\ref\DuckBank.Api.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.BusinessLayer.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.Core.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.Persistence.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.BusinessLayer.pdb
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.Core.pdb
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\bin\Debug\net8.0\DuckBank.Persistence.pdb
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Api\obj\Debug\net8.0\DuckBank.Api.MvcApplicationPartsAssemblyInfo.cs

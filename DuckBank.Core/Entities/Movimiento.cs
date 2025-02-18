@@ -1,23 +1,21 @@
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace DuckBank.Api.Entidades
+namespace DuckBank.Core.Entities
 {
     [BsonIgnoreExtraElements]
     public class Movimiento
     {
         public decimal Cantidad { get; set; }
 
-        //[DataMember]
-        // public string Id { get; set; }
-
         public DateTime FechaDeRegistro { get; set; }
 
         public string Concepto { get; set; }
 
-        public string Referencia { get; set; }
+        public string EncodedKey { get; set; }
 
         public decimal SaldoInicial { get; set; }
 
         public decimal SaldoFinal { get; set; }
+        public int Id { get; set; }
     }
 }

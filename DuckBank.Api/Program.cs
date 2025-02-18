@@ -1,4 +1,6 @@
-using DuckBank.Api.Persistencia;
+using DuckBank.BusinessLayer.Bl;
+using DuckBank.Core.Interfaces.Repositories;
+using DuckBank.Persistence;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using VMtz84.Logger.Middlewares;
@@ -13,7 +15,10 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 // Add services to the container.
-builder.Services.AddScoped<AhorroRepositorio>();
+builder.Services.AddScoped<ClienteBl>();
+builder.Services.AddScoped<AhorroBl>();
+builder.Services.AddScoped<IAhorroRepositorio, AhorroRepositorio>();
+builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

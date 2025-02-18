@@ -9,37 +9,40 @@
     "Parameters": [
       {
         "Name": "ahorroDtoIn",
-        "Type": "DuckBank.Api.Dtos.AhorroDtoIn",
+        "Type": "DuckBank.Core.Dtos.AhorroDtoIn",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
-    "Method": "Get",
-    "RelativePath": "api/Ahorros",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
-    "Method": "Get",
-    "RelativePath": "api/Ahorros/{ahorroId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "ahorroId",
-        "Type": "System.String",
-        "IsRequired": true
+        "Type": "DuckBank.Core.Dtos.AhorroDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "DuckBank.Core.Dtos.IdDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
@@ -56,49 +59,7 @@
       },
       {
         "Name": "movimiento",
-        "Type": "DuckBank.Api.Dtos.MovimientoDtoIn",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
-    "Method": "AgregarOtros",
-    "RelativePath": "api/Ahorros/{id}/Otros",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "otros",
-        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
-    "Method": "Retirar",
-    "RelativePath": "api/Ahorros/{id}/Retiros",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "movimiento",
-        "Type": "DuckBank.Api.Dtos.MovimientoDtoIn",
+        "Type": "DuckBank.Core.Dtos.MovimientoDtoIn",
         "IsRequired": true
       }
     ],
@@ -121,20 +82,107 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DuckBank.Api.Controllers.AhorrosController",
-    "Method": "ObtenerPorOtros",
-    "RelativePath": "api/Ahorros/Otros/{otro}/{valor}",
+    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
+    "Method": "AgregarAsync",
+    "RelativePath": "api/Clientes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DuckBank.Core.Dtos.ClienteDtoIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DuckBank.Core.Dtos.ClienteDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "DuckBank.Core.Dtos.IdDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
+    "Method": "ObtenerTodosAsync",
+    "RelativePath": "api/Clientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
+    "Method": "ObtenerPorIdEncodedKeyAsync",
+    "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "otro",
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
+    "Method": "ActualizarAsync",
+    "RelativePath": "api/Clientes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.String",
         "IsRequired": true
       },
       {
-        "Name": "valor",
+        "Name": "cliente",
+        "Type": "DuckBank.Core.Dtos.ClienteDtoIn",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
+    "Method": "ObtenerPorCorreo",
+    "RelativePath": "api/Clientes/Correos/{correo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "correo",
         "Type": "System.String",
         "IsRequired": true
       }
