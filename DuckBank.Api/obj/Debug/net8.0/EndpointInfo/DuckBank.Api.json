@@ -38,7 +38,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Elemento existente",
             "content": {
               "application/json": {
                 "schema": {
@@ -48,7 +48,7 @@
             }
           },
           "201": {
-            "description": "Created",
+            "description": "Elemento creado",
             "content": {
               "application/json": {
                 "schema": {
@@ -76,30 +76,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/Ahorros/Clientes/{clienteId}": {
-      "get": {
-        "tags": [
-          "Ahorros"
-        ],
-        "summary": "Obtener lista de ahorros por cliente Id",
-        "parameters": [
-          {
-            "name": "clienteId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -143,7 +119,125 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Elemento existente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovimientoDto"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Elemento creado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ahorros/{id}/Retiros": {
+      "post": {
+        "tags": [
+          "Ahorros"
+        ],
+        "summary": "Retirar",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovimientoDtoIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Elemento existente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovimientoDto"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Elemento creado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       }
@@ -650,6 +744,40 @@
           "fechaDeRegistro": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MovimientoDto": {
+        "type": "object",
+        "properties": {
+          "cantidad": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaDeRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "concepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "encodedKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldoInicial": {
+            "type": "number",
+            "format": "double"
+          },
+          "saldoFinal": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

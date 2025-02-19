@@ -21,13 +21,8 @@
             </summary>
             <param name="ahorroDtoIn"></param>
             <returns></returns>
-        </member>
-        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerListaDeAhorrosPorClienteIdAsync(System.String)">
-            <summary>
-            Obtener lista de ahorros por cliente Id
-            </summary>
-            <param name="clienteId"></param>
-            <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="201">Elemento creado</response>   
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.Depositar(System.String,DuckBank.Core.Dtos.MovimientoDtoIn)">
             <summary>
@@ -36,6 +31,18 @@
             <param name="id"></param>
             <param name="movimiento"></param>
             <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="201">Elemento creado</response>   
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Retirar(System.String,DuckBank.Core.Dtos.MovimientoDtoIn)">
+            <summary>
+            Retirar
+            </summary>
+            <param name="id"></param>
+            <param name="movimiento"></param>
+            <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="201">Elemento creado</response> 
         </member>
         <member name="M:DuckBank.Api.Controllers.ClientesController.#ctor(DuckBank.BusinessLayer.Bl.ClienteBl,Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.ClientesController})">
             <summary>

@@ -1,6 +1,8 @@
-﻿using DuckBank.Core.Dtos;
+﻿using DuckBank.BusinessLayer.Helpers;
+using DuckBank.Core.Dtos;
 using DuckBank.Core.Entities;
 using DuckBank.Core.Interfaces.Repositories;
+using System;
 
 namespace DuckBank.BusinessLayer.Bl
 {
@@ -29,7 +31,7 @@ namespace DuckBank.BusinessLayer.Bl
             return id;
         }
 
-        public async Task<object> DepositarAsync(string idGuid, MovimientoDtoIn movimiento)
+        public async Task<IdDto> DepositarAsync(string idGuid, MovimientoDtoIn movimiento)
         {
             Ahorro ahorro;
             Movimiento movimientoEntity;
@@ -49,7 +51,7 @@ namespace DuckBank.BusinessLayer.Bl
                     EncodedKey = movimiento.EncodedKey,
                     SaldoInicial = ahorro.Total,
                     SaldoFinal = ahorro.Total + movimiento.Cantidad,
-                    Id = ahorro.Depositos.Count()
+                    Id = ahorro.Depositos.Count() + 1
                 };
                 ahorro.Depositos.Add(movimientoEntity);
                 ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
@@ -87,9 +89,21 @@ namespace DuckBank.BusinessLayer.Bl
                 })
                 .ToList();
 
-        public object ObtenerMovimientoAsync(string encodedKey)
+        public async Task<MovimientoDto> ObtenerMovimientoAsync(string ahorroIdEncodedKey, string encodedKey)
         {
-            throw new NotImplementedException();
+            Ahorro ahorro;
+            Movimiento movimientoExistente;
+            MovimientoDto dto;
+
+            ahorro = await _repositorio.ObtenerPorIdAsync(ahorroIdEncodedKey);
+
+            movimientoExistente = ahorro.Depositos.Where(x => x.EncodedKey == encodedKey).FirstOrDefault();
+            if(movimientoExistente is null)
+                movimientoExistente = ahorro.Retiros.Where(x => x.EncodedKey == encodedKey).FirstOrDefault();
+            dto = movimientoExistente.ToDto();
+            
+
+            return dto;
         }
 
         public async Task<AhorroDto> ObtenerPorIdAsync(string idGuid)
@@ -111,6 +125,48 @@ namespace DuckBank.BusinessLayer.Bl
             };
 
             return ahorroDto;
+        }
+
+        public async Task<IdDto> RetirarAsync(string idGuid, MovimientoDtoIn movimiento)
+        {
+            Ahorro ahorro;
+            Movimiento movimientoEntity;
+            Movimiento movimientoExistente;
+
+            ahorro = await _repositorio.ObtenerPorIdAsync(idGuid);
+            if (string.IsNullOrEmpty(movimiento.EncodedKey))
+                movimiento.EncodedKey = Guid.NewGuid().ToString();
+            movimientoExistente = ahorro.Retiros.Where(x => x.EncodedKey == movimiento.EncodedKey).FirstOrDefault();
+            if (movimientoExistente is null)
+            {
+                movimientoEntity = new Movimiento
+                {
+                    Cantidad = movimiento.Cantidad,
+                    Concepto = movimiento.Concepto,
+                    FechaDeRegistro = DateTime.Now,
+                    EncodedKey = movimiento.EncodedKey,
+                    SaldoInicial = ahorro.Total,
+                    SaldoFinal = ahorro.Total - movimiento.Cantidad,
+                    Id = ahorro.Depositos.Count() + 1
+                };
+                ahorro.Retiros.Add(movimientoEntity);
+                ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
+                await _repositorio.ActualizarAsync(ahorro);
+
+                return new IdDto
+                {
+                    Id = movimientoEntity.Id,
+                    EncodedKey = movimientoEntity.EncodedKey
+                };
+            }
+            else
+            {
+                return new IdDto
+                {
+                    Id = movimientoExistente.Id,
+                    EncodedKey = movimientoExistente.EncodedKey
+                };
+            }
         }
 
         //public async Task<AhorroDto> ObtenerAhorroConDetallePorIdAsync(string guid)

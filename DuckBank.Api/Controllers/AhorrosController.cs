@@ -1,13 +1,11 @@
 ﻿using DuckBank.BusinessLayer.Bl;
 using DuckBank.Core.Dtos;
-using DuckBank.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace DuckBank.Api.Controllers
 {
     /// <summary>
-    /// 
+    /// Ahorros
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
@@ -31,9 +29,9 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="ahorroDtoIn"></param>
         /// <returns></returns>
-        [HttpPost]
         /// <response code="200">Elemento existente</response>
         /// <response code="201">Elemento creado</response>   
+        [HttpPost]
         [ProducesResponseType(typeof(AhorroDto), 200)]
         [ProducesResponseType(typeof(IdDto), 201)]
         [ProducesResponseType(typeof(ProblemDetails), 400)]
@@ -50,6 +48,72 @@ namespace DuckBank.Api.Controllers
             id = await _repositorio.AgregarAsync(ahorroDtoIn);
 
             return Created($"Ahorros/{id}", new IdDto { Id = id, EncodedKey = ahorroDtoIn.Guid, FechaDeRegistro = ahorro.FechaDeRegistro });
+        }
+
+        /// <summary>
+        /// Depositar
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="movimiento"></param>
+        /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="201">Elemento creado</response>   
+        [HttpPost("{id}/Depositos")]
+        [ProducesResponseType(typeof(MovimientoDto), 200)]
+        [ProducesResponseType(typeof(IdDto), 201)]
+        [ProducesResponseType(typeof(ProblemDetails), 400)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
+        public async Task<IActionResult> Depositar(string id, [FromBody] MovimientoDtoIn movimiento)
+        {
+            var ahorro = await _repositorio.ObtenerPorIdAsync(id);
+            if (ahorro is null)
+                return NotFound(new { Mensaje = $"Ahorro: {id} no encontrado", Fecha = DateTime.Now });
+
+            var movimientoExistente = await _repositorio.ObtenerMovimientoAsync(id, movimiento.EncodedKey);
+            if (movimientoExistente is not null)
+                return Ok(movimientoExistente);
+
+            var idDto = await _repositorio.DepositarAsync(id, movimiento);
+
+            return Created("", idDto);
+        }
+
+        /// <summary>
+        /// Retirar
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="movimiento"></param>
+        /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="201">Elemento creado</response> 
+        [HttpPost("{id}/Retiros")]
+        [ProducesResponseType(typeof(MovimientoDto), 200)]
+        [ProducesResponseType(typeof(IdDto), 201)]
+        [ProducesResponseType(typeof(ProblemDetails), 400)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
+        public async Task<IActionResult> Retirar(string id, [FromBody] MovimientoDtoIn movimiento)
+        {
+            var ahorro = await _repositorio.ObtenerPorIdAsync(id);
+            if (ahorro is null)
+                return NotFound(new { Mensaje = $"Ahorro: {id} no encontrado", Fecha = DateTime.Now });
+
+            if (ahorro.Total < movimiento.Cantidad)
+                return BadRequest(new ProblemDetails
+                {
+                    Status = 400,
+                    Title = "No hay suficientes fondos",
+                    Detail = $"Total: {ahorro.Total.ToString("c")}"
+                });
+
+            var movimientoExistente = await _repositorio.ObtenerMovimientoAsync(id, movimiento.EncodedKey);
+            if (movimientoExistente is not null)
+                return Ok(movimientoExistente);
+
+            var idDto = await _repositorio.RetirarAsync(id, movimiento);
+
+            return Created("", idDto);
         }
 
         ///// <summary>
@@ -132,77 +196,17 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="clienteId"></param>
         /// <returns></returns>
-        [HttpGet("Clientes/{clienteId}")]
-        public async Task<IActionResult> ObtenerListaDeAhorrosPorClienteIdAsync(string clienteId)
-        {
-            List<AhorroDto> lista;
-
-            lista = await _repositorio.ObtenerAhorrosPorClienteIdAsync(clienteId);
-
-            return Ok(lista);
-        }
-
-        /// <summary>
-        /// Depositar
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="movimiento"></param>
-        /// <returns></returns>
-        [HttpPost("{id}/Depositos")]
-        public async Task<IActionResult> Depositar(string id, [FromBody] MovimientoDtoIn movimiento)
-        {
-
-            var ahorro = await _repositorio.ObtenerPorIdAsync(id);
-            if (ahorro is null)
-                return NotFound(new { Mensaje = $"Ahorro: {id} no encontrado", Fecha = DateTime.Now });
-
-            var movimientoExistente = _repositorio.ObtenerMovimientoAsync(movimiento.EncodedKey);
-            if (movimientoExistente is not null)
-                return Ok(movimientoExistente);
-            
-            await _repositorio.DepositarAsync(id, movimiento);
-
-            return Created("", movimiento);
-            
-        }
-
-        ///// <summary>
-        ///// Retirar
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <param name="movimiento"></param>
-        ///// <returns></returns>
-        //[HttpPost("{id}/Retiros")]
-        //public async Task<IActionResult> Retirar(string id, [FromBody] MovimientoDtoIn movimiento)
+        //[HttpGet("Clientes/{clienteId}")]
+        //public async Task<IActionResult> ObtenerListaDeAhorrosPorClienteIdAsync(string clienteId)
         //{
-        //    Ahorro ahorro;
-        //    Movimiento movimientoEntity;
+        //    List<AhorroDto> lista;
 
-        //    ahorro = await _repositorio.ObtenerPorIdAsync(id.ToString());
-        //    if (movimiento.Cantidad > ahorro.Total)
-        //    {
-        //        return StatusCode(428, new
-        //        {
-        //            Mensaje = "No hay chivo"
-        //        });
-        //    }
-        //    if (string.IsNullOrEmpty(movimiento.Referencia))
-        //        movimiento.Referencia = Guid.NewGuid().ToString();
-        //    movimientoEntity = new Movimiento
-        //    {
-        //        Cantidad = movimiento.Cantidad,
-        //        Concepto = movimiento.Concepto,
-        //        FechaDeRegistro = DateTime.Now,
-        //        Referencia = movimiento.Referencia,
-        //        SaldoFinal = ahorro.Total - movimiento.Cantidad,
-        //        SaldoInicial = ahorro.Total
-        //    };
-        //    ahorro.Retiros.Add(movimientoEntity);
-        //    ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
-        //    await _repositorio.ActualizarAsync(ahorro);
+        //    lista = await _repositorio.ObtenerAhorrosPorClienteIdAsync(clienteId);
 
-        //    return Created("", movimiento);
+        //    return Ok(lista);
         //}
+
+
 
         ///// <summary>
         ///// Actualizar el valor o lo guarda en caso de no existir

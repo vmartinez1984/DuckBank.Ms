@@ -20,9 +20,9 @@ namespace DuckBank.Core.Dtos
 
         public string Concepto { get; set; }
 
-        public string Referencia { get; set; }
+        public string EncodedKey { get; set; }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public decimal SaldoInicial { get; set; }
 

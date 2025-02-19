@@ -82,5 +82,16 @@ namespace DuckBank.BusinessLayer.Helpers
             Otros = dto.Otros,
             Direccion = dto.Direccion.ToEntity()
         };
+
+        public static MovimientoDto ToDto(this Movimiento entity) => entity is null ? null : new MovimientoDto
+        {
+            Cantidad = entity.Cantidad,
+            Concepto = entity.Concepto,
+            FechaDeRegistro = entity.FechaDeRegistro,
+            Id = entity.Id,
+            EncodedKey = entity.EncodedKey,
+            SaldoFinal = entity.SaldoFinal,
+            SaldoInicial = entity.SaldoInicial
+        };
     }
 }

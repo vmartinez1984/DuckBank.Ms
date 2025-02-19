@@ -1,10 +1,14 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DuckBank.Core.Entities
-{
-    [BsonIgnoreExtraElements]
+{    
     public class Movimiento
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; } = ObjectId.GenerateNewId().ToString();
+
         public decimal Cantidad { get; set; }
 
         public DateTime FechaDeRegistro { get; set; }
@@ -16,6 +20,7 @@ namespace DuckBank.Core.Entities
         public decimal SaldoInicial { get; set; }
 
         public decimal SaldoFinal { get; set; }
+
         public int Id { get; set; }
     }
 }
