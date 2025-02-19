@@ -6,7 +6,7 @@
     <members>
         <member name="T:DuckBank.Api.Controllers.AhorrosController">
             <summary>
-            
+            Ahorros
             </summary>
         </member>
         <member name="M:DuckBank.Api.Controllers.AhorrosController.#ctor(DuckBank.BusinessLayer.Bl.AhorroBl)">
