@@ -191,16 +191,6 @@
   },
   {
     "ContainingType": "DuckBank.Api.Controllers.ClientesController",
-    "Method": "ObtenerTodosAsync",
-    "RelativePath": "api/Clientes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DuckBank.Api.Controllers.ClientesController",
     "Method": "ObtenerPorIdEncodedKeyAsync",
     "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "GET",
@@ -213,7 +203,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "DuckBank.Core.Dtos.ClienteDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
     "ContainingType": "DuckBank.Api.Controllers.ClientesController",
@@ -234,7 +246,29 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "DuckBank.Core.Dtos.ClienteDto",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
     "ContainingType": "DuckBank.Api.Controllers.ClientesController",

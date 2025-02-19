@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace DuckBank.Persistence
 {
-    public class ClienteRepositorio: IClienteRepositorio
+    public class ClienteRepositorio : IClienteRepositorio
     {
         private readonly IMongoCollection<Cliente> _collection;
 
@@ -41,14 +41,12 @@ namespace DuckBank.Persistence
         public async Task ActualizarAsync(Cliente item) =>
             await _collection.ReplaceOneAsync(x => x._id == item._id, item);
 
-        public async Task<Cliente> ObtenerPorIdAsync(string id)
+        public async Task<Cliente> ObtenerPorIdAsync(string idEncodedKey)
         {
-            return (await _collection.FindAsync(
-            new BsonDocument("$or", new BsonArray
-            {
-                new BsonDocument("Id", id),
-                new BsonDocument("EncodedKey",id)
-            }))).FirstOrDefault();
+            if (int.TryParse(idEncodedKey, out int id))            
+                return await _collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            
+            return await _collection.Find(x=> x.EncodedKey == idEncodedKey).FirstOrDefaultAsync();
         }
 
         public async Task<Cliente> ObtenerPorCorreoAsync(string correo)

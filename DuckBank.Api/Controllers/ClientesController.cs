@@ -56,27 +56,33 @@ namespace DuckBank.Api.Controllers
         /// Obtener todos
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> ObtenerTodosAsync()
-        {
+        //[HttpGet]
+        //public async Task<IActionResult> ObtenerTodosAsync()
+        //{
 
-            var lista = await _cliente.ObtenerTodosAsync();
+        //    var lista = await _cliente.ObtenerTodosAsync();
 
-            HttpContext.Response.Headers.Add("TotalDeRegistros", lista.Count().ToString());
-            return Ok(lista);
-        }
+        //    HttpContext.Response.Headers.Add("TotalDeRegistros", lista.Count().ToString());
+        //    return Ok(lista);
+        //}
 
         /// <summary>
-        /// Obtener por id
+        /// Obtener por id o encodedKey
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="404">Elemento no encontrado</response>  
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(ClienteDto), 200)]
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
         public async Task<IActionResult> ObtenerPorIdEncodedKeyAsync(string id)
         {
             var item = await _cliente.ObtenerPorIdAsync(id);
             if (item == null)
-                return NotFound(new { Mensaje = "Cliente no encontrado" });
+                return NotFound(new ProblemDetails { Status = 404, Detail = $"No se encontro cliente con {id}" });
 
             return Ok(item);
         }
@@ -87,7 +93,13 @@ namespace DuckBank.Api.Controllers
         /// <param name="id"></param>
         /// <param name="cliente"></param>
         /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="404">Elemento no encontrado</response>
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(ClienteDto), 200)]
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
         public async Task<IActionResult> ActualizarAsync(string id, ClienteDtoIn cliente)
         {
             var item = await _cliente.ObtenerPorIdAsync(id);
@@ -95,7 +107,7 @@ namespace DuckBank.Api.Controllers
                 return NotFound(new { Mensaje = "Cliente no encontrado" });
             await _cliente.ActualizarAsync(id, cliente);
 
-            return Ok(item);
+            return Accepted(new ProblemDetails { Status = 202, Detail = "Datos actualizados" });
         }
 
         /// <summary>
@@ -103,7 +115,13 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="correo"></param>
         /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="404">Elemento no encontrado</response>
         [HttpGet("Correos/{correo}")]
+        [ProducesResponseType(typeof(ClienteDto), 200)]
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
         public async Task<IActionResult> ObtenerPorCorreo(string correo)
         {
             var item = await _cliente.ObtenerPorCorreoAsync(correo);

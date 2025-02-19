@@ -60,18 +60,14 @@
             <response code="200">Elemento existente</response>
             <response code="201">Elemento creado</response>   
         </member>
-        <member name="M:DuckBank.Api.Controllers.ClientesController.ObtenerTodosAsync">
-            <summary>
-            Obtener todos
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:DuckBank.Api.Controllers.ClientesController.ObtenerPorIdEncodedKeyAsync(System.String)">
             <summary>
-            Obtener por id
+            Obtener por id o encodedKey
             </summary>
             <param name="id"></param>
             <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="404">Elemento no encontrado</response>  
         </member>
         <member name="M:DuckBank.Api.Controllers.ClientesController.ActualizarAsync(System.String,DuckBank.Core.Dtos.ClienteDtoIn)">
             <summary>
@@ -80,6 +76,8 @@
             <param name="id"></param>
             <param name="cliente"></param>
             <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="404">Elemento no encontrado</response>
         </member>
         <member name="M:DuckBank.Api.Controllers.ClientesController.ObtenerPorCorreo(System.String)">
             <summary>

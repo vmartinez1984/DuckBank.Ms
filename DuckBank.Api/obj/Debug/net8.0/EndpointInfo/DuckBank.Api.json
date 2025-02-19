@@ -310,17 +310,6 @@
             }
           }
         }
-      },
-      "get": {
-        "tags": [
-          "Clientes"
-        ],
-        "summary": "Obtener todos",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/api/Clientes/{id}": {
@@ -328,7 +317,7 @@
         "tags": [
           "Clientes"
         ],
-        "summary": "Obtener por id",
+        "summary": "Obtener por id o encodedKey",
         "parameters": [
           {
             "name": "id",
@@ -342,7 +331,34 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Elemento existente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Elemento no encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       },
@@ -384,7 +400,34 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Elemento existente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Elemento no encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       }

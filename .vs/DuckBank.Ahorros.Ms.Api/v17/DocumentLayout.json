@@ -7,33 +7,33 @@
       "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99E5453C-EB67-4F7C-B6F9-4B56945445C2}|..\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\helpers\\mapeador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99E5453C-EB67-4F7C-B6F9-4B56945445C2}|..\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\bl\\clientebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.ahorros.ms\\duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\controllers\\ahorroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83A47842-749D-40FD-9D65-FB6302D906C8}|..\\DuckBank.Core\\DuckBank.Core.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.core\\dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD76ECFA-A6D1-44BF-BE23-49F8AB333CDA}|..\\DuckBank.Persistence\\DuckBank.Persistence.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.persistence\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83A47842-749D-40FD-9D65-FB6302D906C8}|..\\DuckBank.Core\\DuckBank.Core.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.core\\duckbank.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99E5453C-EB67-4F7C-B6F9-4B56945445C2}|..\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\duckbank.businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD76ECFA-A6D1-44BF-BE23-49F8AB333CDA}|..\\DuckBank.Persistence\\DuckBank.Persistence.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.persistence\\duckbank.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.ahorros.ms\\duckbank.api\\duckbank.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{D6843DB4-AC6A-4C19-9183-D696B4BACF6C}|DuckBank.Api\\DuckBank.Api.csproj|solutionrelative:duckbank.api\\duckbank.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\helpers\\mapeador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\bl\\clientebl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.core\\dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.businesslayer\\duckbank.businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.core\\duckbank.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.persistence\\duckbank.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vmartinez\\source\\repos\\vmartinez1984\\duckbank.persistence\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -95,24 +95,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Mapeador.cs",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
-              "RelativeDocumentMoniker": "..\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
-              "RelativeToolTip": "..\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
+              "RelativeDocumentMoniker": "DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
+              "RelativeToolTip": "DuckBank.BusinessLayer\\Helpers\\Mapeador.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwEYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T16:39:16.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ClienteBl.cs",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
-              "RelativeDocumentMoniker": "..\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
-              "RelativeToolTip": "..\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
+              "RelativeDocumentMoniker": "DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
+              "RelativeToolTip": "DuckBank.BusinessLayer\\Bl\\ClienteBl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAUwCIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T16:38:53.526Z"
@@ -125,43 +125,43 @@
               "RelativeDocumentMoniker": "DuckBank.Api\\Controllers\\ClientesController.cs",
               "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Api\\Controllers\\ClientesController.cs",
               "RelativeToolTip": "DuckBank.Api\\Controllers\\ClientesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T16:38:40.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ClienteDto.cs",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Core\\Dtos\\ClienteDto.cs",
-              "RelativeDocumentMoniker": "..\\DuckBank.Core\\Dtos\\ClienteDto.cs",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Core\\Dtos\\ClienteDto.cs",
-              "RelativeToolTip": "..\\DuckBank.Core\\Dtos\\ClienteDto.cs",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\Dtos\\ClienteDto.cs",
+              "RelativeDocumentMoniker": "DuckBank.Core\\Dtos\\ClienteDto.cs",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\Dtos\\ClienteDto.cs",
+              "RelativeToolTip": "DuckBank.Core\\Dtos\\ClienteDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T16:38:22.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "DuckBank.BusinessLayer.csproj",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
-              "RelativeDocumentMoniker": "..\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
-              "RelativeToolTip": "..\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
+              "RelativeDocumentMoniker": "DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
+              "RelativeToolTip": "DuckBank.BusinessLayer\\DuckBank.BusinessLayer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-18T01:16:54.05Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DuckBank.Core.csproj",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Core\\DuckBank.Core.csproj",
-              "RelativeDocumentMoniker": "..\\DuckBank.Core\\DuckBank.Core.csproj",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Core\\DuckBank.Core.csproj",
-              "RelativeToolTip": "..\\DuckBank.Core\\DuckBank.Core.csproj",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\DuckBank.Core.csproj",
+              "RelativeDocumentMoniker": "DuckBank.Core\\DuckBank.Core.csproj",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\DuckBank.Core.csproj",
+              "RelativeToolTip": "DuckBank.Core\\DuckBank.Core.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-18T01:16:48.358Z"
@@ -170,17 +170,17 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "DuckBank.Persistence.csproj",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
-              "RelativeDocumentMoniker": "..\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
-              "RelativeToolTip": "..\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
+              "RelativeDocumentMoniker": "DuckBank.Persistence\\DuckBank.Persistence.csproj",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Persistence\\DuckBank.Persistence.csproj",
+              "RelativeToolTip": "DuckBank.Persistence\\DuckBank.Persistence.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-18T01:16:42.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "DuckBank.Api.csproj",
               "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Api\\DuckBank.Api.csproj",
               "RelativeDocumentMoniker": "DuckBank.Api\\DuckBank.Api.csproj",
@@ -192,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AhorrosController.cs",
               "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Api\\Controllers\\AhorrosController.cs",
               "RelativeDocumentMoniker": "DuckBank.Api\\Controllers\\AhorrosController.cs",
@@ -204,12 +204,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "ClienteRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Persistence\\ClienteRepositorio.cs",
-              "RelativeDocumentMoniker": "..\\DuckBank.Persistence\\ClienteRepositorio.cs",
-              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Persistence\\ClienteRepositorio.cs",
-              "RelativeToolTip": "..\\DuckBank.Persistence\\ClienteRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Persistence\\ClienteRepositorio.cs",
+              "RelativeDocumentMoniker": "DuckBank.Persistence\\ClienteRepositorio.cs",
+              "ToolTip": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Persistence\\ClienteRepositorio.cs",
+              "RelativeToolTip": "DuckBank.Persistence\\ClienteRepositorio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T00:39:57.821Z"
