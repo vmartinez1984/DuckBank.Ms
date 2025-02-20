@@ -1,7 +1,6 @@
-﻿using DuckBank.Core.Interfaces;
-using DuckBank.Persistence.Entities;
+﻿using DuckBank.Persistence.Entities;
+using DuckBank.Persistence.Interfaces;
 using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace DuckBank.Persistence.Repositorios

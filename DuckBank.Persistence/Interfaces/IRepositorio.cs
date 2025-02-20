@@ -1,6 +1,4 @@
-﻿using DuckBank.Core.Interfaces;
-
-namespace DuckBank.Persistence.Interfaces
+﻿namespace DuckBank.Persistence.Interfaces
 {
     public interface IRepositorio
     {

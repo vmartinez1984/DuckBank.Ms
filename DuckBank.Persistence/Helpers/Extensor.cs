@@ -1,5 +1,4 @@
-﻿using DuckBank.Core.Interfaces;
-using DuckBank.Persistence.Interfaces;
+﻿using DuckBank.Persistence.Interfaces;
 using DuckBank.Persistence.Repositorios;
 using Microsoft.Extensions.DependencyInjection;
 
