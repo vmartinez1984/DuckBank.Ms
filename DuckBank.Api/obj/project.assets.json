@@ -682,7 +682,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DuckBank.Core": "1.0.0",
-          "DuckBank.Persistence": "1.0.0"
+          "DuckBank.Persistence": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
         },
         "compile": {
           "bin/placeholder/DuckBank.BusinessLayer.dll": {}
@@ -708,8 +709,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "DuckBank.Core": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "MongoDB.Driver": "3.0.0"
         },
         "compile": {

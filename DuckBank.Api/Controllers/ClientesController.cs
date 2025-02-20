@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DuckBank.Api.Controllers
 {
+    /// <summary>
+    /// Controlador de clientes
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase

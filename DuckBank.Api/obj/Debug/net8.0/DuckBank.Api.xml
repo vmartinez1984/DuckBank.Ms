@@ -44,6 +44,35 @@
             <response code="200">Elemento existente</response>
             <response code="201">Elemento creado</response> 
         </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.Get(System.String)">
+            <summary>
+            Obtener ahorro por ahorroId
+            </summary>
+            <param name="ahorroId"></param>
+            <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="404">Elemento no encontrado</response> 
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerMovimientosAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ahorroId"></param>
+            <returns></returns>
+            <response code="200">Lista de movimientos</response>        
+        </member>
+        <member name="M:DuckBank.Api.Controllers.AhorrosController.ObtenerListaDeAhorrosPorClienteIdAsync(System.String)">
+            <summary>
+            Obtener lista de ahorros por cliente Id
+            </summary>
+            <param name="clienteId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DuckBank.Api.Controllers.ClientesController">
+            <summary>
+            Controlador de clientes
+            </summary>
+        </member>
         <member name="M:DuckBank.Api.Controllers.ClientesController.#ctor(DuckBank.BusinessLayer.Bl.ClienteBl,Microsoft.Extensions.Logging.ILogger{DuckBank.Api.Controllers.ClientesController})">
             <summary>
             
@@ -85,6 +114,8 @@
             </summary>
             <param name="correo"></param>
             <returns></returns>
+            <response code="200">Elemento existente</response>
+            <response code="404">Elemento no encontrado</response>
         </member>
         <member name="T:DuckBank.Api.Controllers.TestsController">
             <summary>

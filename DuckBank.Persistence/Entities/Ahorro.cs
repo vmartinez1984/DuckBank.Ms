@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
-namespace DuckBank.Core.Entities
+namespace DuckBank.Persistence.Entities
 {
     public class Ahorro
     {

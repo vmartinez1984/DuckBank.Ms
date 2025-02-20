@@ -1,4 +1,4 @@
-﻿namespace DuckBank.Core.Entities
+﻿namespace DuckBank.Persistence.Entities
 {
     public class Direccion
     {

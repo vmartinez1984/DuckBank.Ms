@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace DuckBank.Core.Entities
+namespace DuckBank.Persistence.Entities
 {    
     public class Movimiento
     {

@@ -1,14 +1,15 @@
 ﻿using DuckBank.BusinessLayer.Helpers;
 using DuckBank.Core.Dtos;
-using DuckBank.Core.Entities;
-using DuckBank.Core.Interfaces.Repositories;
+using DuckBank.Core.Interfaces;
+using DuckBank.Core.Interfaces.Bl;
+using DuckBank.Persistence.Entities;
 
 namespace DuckBank.BusinessLayer.Bl
 {
     /// <summary>
     /// Reglas de negocio de clientes
     /// </summary>
-    public class ClienteBl
+    public class ClienteBl: ICliente
     {
         private readonly IClienteRepositorio _repositorio;
 

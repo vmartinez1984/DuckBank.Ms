@@ -1,17 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace DuckBank.Core.Dtos
-{
-    public class AhorroConDetalleDto : AhorroDtoIn
-    {
-        public int Id { get; set; }
-        public decimal Total { get; set; }
-        public List<MovimientoDto> Depositos { get; set; }
-        public List<MovimientoDto> Retiros { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaDeRegistro { get; internal set; }
-    }
-
+{    
     public class MovimientoDto
     {
         public decimal Cantidad { get; set; }
@@ -41,8 +31,7 @@ namespace DuckBank.Core.Dtos
     public class AhorroDto : AhorroDtoIn
     {
         public int Id { get; set; }
-        public decimal Total { get; set; }
-        public string Estado { get;  set; }
+        public decimal Total { get; set; }        
         public DateTime FechaDeRegistro { get;  set; }
     }
 

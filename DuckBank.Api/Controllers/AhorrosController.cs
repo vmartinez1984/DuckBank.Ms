@@ -116,53 +116,53 @@ namespace DuckBank.Api.Controllers
             return Created("", idDto);
         }
 
-        ///// <summary>
-        ///// Obtener ahorro por ahorroId
-        ///// </summary>
-        ///// <param name="ahorroId"></param>
-        ///// <returns></returns>
-        //[HttpGet("{ahorroId}")]
-        //public async Task<IActionResult> Get(string ahorroId)
-        //{
-        //    AhorroConDetalleDto ahorroDto;
-        //    Ahorro ahorro;
+        /// <summary>
+        /// Obtener ahorro por ahorroId
+        /// </summary>
+        /// <param name="ahorroId"></param>
+        /// <returns></returns>
+        /// <response code="200">Elemento existente</response>
+        /// <response code="404">Elemento no encontrado</response> 
+        [ProducesResponseType(typeof(AhorroDto), 200)]
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
+        [HttpGet("{ahorroId}")]
+        public async Task<IActionResult> Get(string ahorroId)
+        {
+            AhorroDto dto;
 
-        //    ahorro = await _repositorio.ObtenerPorIdAsync(ahorroId);
-        //    if (ahorro == null)
-        //        return NotFound(new { Mensaje = "Ahorro no encontrado" });
-        //    ahorroDto = new AhorroConDetalleDto
-        //    {
-        //        Id = ahorro.Id,
-        //        Nombre = ahorro.Nombre,
-        //        Total = ahorro.Total,
-        //        Guid = ahorro.Guid,
-        //        ClienteId = ahorro.ClienteId,
-        //        Interes = ahorro.Interes,
-        //        Estado = ahorro.Estado,
-        //        FechaDeRegistro = ahorro.FechaDeRegistro,
-        //        Depositos = ahorro.Depositos.Select(x => new MovimientoDto
-        //        {
-        //            Cantidad = x.Cantidad,
-        //            FechaDeRegistro = x.FechaDeRegistro,
-        //            Concepto = x.Concepto,
-        //            Referencia = x.Referencia,
-        //            SaldoFinal = x.SaldoFinal,
-        //            SaldoInicial = x.SaldoInicial
-        //        }).ToList(),
-        //        Retiros = ahorro.Retiros.Select(x => new MovimientoDto
-        //        {
-        //            Cantidad = x.Cantidad,
-        //            FechaDeRegistro = x.FechaDeRegistro,
-        //            Concepto = x.Concepto,
-        //            Referencia = x.Referencia,
-        //            SaldoFinal = x.SaldoFinal,
-        //            SaldoInicial = x.SaldoInicial
-        //        }).ToList(),
-        //        Otros = ahorro.Otros
-        //    };
+            dto = await _repositorio.ObtenerPorIdAsync(ahorroId);
+            if (dto is null)
+                return NotFound(new ProblemDetails { Status = 404, Detail = "Ahorro no encontrado" });
 
-        //    return Ok(ahorroDto);
-        //}
+            return Ok(dto);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ahorroId"></param>
+        /// <returns></returns>
+        /// <response code="200">Lista de movimientos</response>        
+        [HttpGet("{ahorroId}/Movimientos")]
+        [ProducesResponseType(typeof(List<MovimientoDto>), 200)]        
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+        [Produces("application/json")]
+        public async Task<IActionResult> ObtenerMovimientosAsync(string ahorroId)
+        {
+            List<MovimientoDto> movimientos;
+
+            AhorroDto dto;
+
+            dto = await _repositorio.ObtenerPorIdAsync(ahorroId);
+            if (dto is null)
+                return NotFound(new ProblemDetails { Status = 404, Detail = "Ahorro no encontrado" });
+            movimientos = await _repositorio.ObtenerMovimientosAsync(ahorroId);
+
+            return Ok(movimientos);
+        }
 
         ///// <summary>
         ///// Lista de ahorros 
@@ -196,15 +196,15 @@ namespace DuckBank.Api.Controllers
         /// </summary>
         /// <param name="clienteId"></param>
         /// <returns></returns>
-        //[HttpGet("Clientes/{clienteId}")]
-        //public async Task<IActionResult> ObtenerListaDeAhorrosPorClienteIdAsync(string clienteId)
-        //{
-        //    List<AhorroDto> lista;
+        [HttpGet("Clientes/{clienteId}")]
+        public async Task<IActionResult> ObtenerListaDeAhorrosPorClienteIdAsync(string clienteId)
+        {
+            List<AhorroDto> lista;
 
-        //    lista = await _repositorio.ObtenerAhorrosPorClienteIdAsync(clienteId);
+            lista = await _repositorio.ObtenerAhorrosPorClienteIdAsync(clienteId);
 
-        //    return Ok(lista);
-        //}
+            return Ok(lista);
+        }
 
 
 

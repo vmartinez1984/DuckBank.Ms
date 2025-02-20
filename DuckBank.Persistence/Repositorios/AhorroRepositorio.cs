@@ -1,12 +1,12 @@
-﻿using DuckBank.Core.Entities;
-using DuckBank.Core.Interfaces.Repositories;
+﻿using DuckBank.Core.Interfaces;
+using DuckBank.Persistence.Entities;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DuckBank.Persistence
+namespace DuckBank.Persistence.Repositorios
 {
-    public class AhorroRepositorio: IAhorroRepositorio
+    public class AhorroRepositorio : IAhorroRepositorio
     {
         private readonly IMongoCollection<Ahorro> _collection;
 
@@ -46,23 +46,14 @@ namespace DuckBank.Persistence
             return item.Id + 1;
         }
 
-        public async Task<List<Ahorro>> ObtenerAsync()
-        {
-            List<Ahorro> ahorros;
-            // FilterDefinition<Ahorro> filter;
-
-            // filter = Builders<Ahorro>.Filter.Eq("ClienteId", clienteId);
-            ahorros = (await _collection.FindAsync(x => x.Estado == "Activo")).ToList();
-
-            return ahorros;
-        }
+        public async Task<List<Ahorro>> ObtenerAsync() => await _collection.Find(x => x.Estado == "Activo").ToListAsync();
 
         public async Task<List<Ahorro>> ObtenerListaDeAhorrosPorClienteIdAsync(string clienteId)
         {
             List<Ahorro> ahorros;
             FilterDefinition<Ahorro> filter;
 
-            filter = Builders<Ahorro>.Filter.Eq("ClienteId", clienteId);
+            filter = Builders<Ahorro>.Filter.Eq("ClienteEncodedKey", clienteId);
             ahorros = (await _collection.FindAsync(filter)).ToList();
 
             return ahorros;
@@ -74,9 +65,9 @@ namespace DuckBank.Persistence
             int id;
 
             if (int.TryParse(idGuid, out id))
-                ahorro = (await _collection.FindAsync<Ahorro>(x => x.Id == id)).FirstOrDefault();
+                ahorro = (await _collection.FindAsync(x => x.Id == id)).FirstOrDefault();
             else
-                ahorro = (await _collection.FindAsync<Ahorro>(x => x.Guid == idGuid)).FirstOrDefault();
+                ahorro = (await _collection.FindAsync(x => x.Guid == idGuid)).FirstOrDefault();
 
             return ahorro;
         }
@@ -111,6 +102,40 @@ namespace DuckBank.Persistence
             ahorro = (await _collection.FindAsync(new BsonDocument($"Otros.{otro}", valor))).FirstOrDefault();
 
             return ahorro;
+        }
+
+        public async Task<int> DepositarAsync(string idGuid, Movimiento movimiento)
+        {
+            Ahorro ahorro;
+
+            ahorro = await ObtenerPorIdAsync(idGuid);
+            movimiento.SaldoInicial = ahorro.Total;
+            movimiento.SaldoFinal = ahorro.Total + movimiento.Cantidad;
+            movimiento.Id = ahorro.Depositos.Count() + ahorro.Retiros.Count() + 1;
+            movimiento.FechaDeRegistro = DateTime.Now;
+            ahorro.Depositos.Add(movimiento);
+            ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
+            await ActualizarAsync(ahorro);
+
+            return movimiento.Id;
+        }
+
+        public async Task<int> RetirarAsync(string idGuid, Movimiento movimiento)
+        {
+            Ahorro ahorro;
+            ahorro = await ObtenerPorIdAsync(idGuid);
+
+            if (ahorro.Total < movimiento.Cantidad)
+                throw new Exception("No hay suficiente camarón");
+
+            movimiento.SaldoInicial = ahorro.Total;
+            movimiento.SaldoFinal = ahorro.Total + movimiento.Cantidad;
+            movimiento.Id = ahorro.Depositos.Count() + ahorro.Retiros.Count() + 1;
+            ahorro.Depositos.Add(movimiento);
+            ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
+            await ActualizarAsync(ahorro);
+
+            return movimiento.Id;
         }
     }
 

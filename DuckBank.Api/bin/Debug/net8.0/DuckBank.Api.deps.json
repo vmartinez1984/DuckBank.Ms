@@ -378,7 +378,8 @@
       "DuckBank.BusinessLayer/1.0.0": {
         "dependencies": {
           "DuckBank.Core": "1.0.0",
-          "DuckBank.Persistence": "1.0.0"
+          "DuckBank.Persistence": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
         },
         "runtime": {
           "DuckBank.BusinessLayer.dll": {
@@ -402,6 +403,7 @@
         "dependencies": {
           "DuckBank.Core": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "MongoDB.Driver": "3.0.0"
         },
         "runtime": {

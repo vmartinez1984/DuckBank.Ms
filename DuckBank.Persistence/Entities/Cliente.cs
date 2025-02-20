@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace DuckBank.Core.Entities
+namespace DuckBank.Persistence.Entities
 {
     public class Cliente
     {
@@ -28,5 +28,9 @@ namespace DuckBank.Core.Entities
         public bool EstaActivo { get; set; } = true;
 
         public Dictionary<string, string> Otros { get; set; }
+
+        public DateTime FechaDeNacimiento { get; set; }
+
+        public DateTime FechaDeRegistro { get; set; } = DateTime.Now;
     }
 }

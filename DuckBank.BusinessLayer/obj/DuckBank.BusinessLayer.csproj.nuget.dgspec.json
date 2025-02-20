@@ -57,6 +57,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -177,11 +183,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\DuckBank.Core.csproj": {
-                "projectPath": "C:\\Users\\vmartinez\\source\\repos\\vmartinez1984\\DuckBank.Ahorros.Ms\\DuckBank.Core\\DuckBank.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -201,6 +203,10 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[9.0.0, )"
             },

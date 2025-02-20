@@ -1,10 +1,10 @@
-﻿using DuckBank.Core.Entities;
-using DuckBank.Core.Interfaces.Repositories;
+﻿using DuckBank.Core.Interfaces;
+using DuckBank.Persistence.Entities;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DuckBank.Persistence
+namespace DuckBank.Persistence.Repositorios
 {
     public class ClienteRepositorio : IClienteRepositorio
     {
@@ -25,7 +25,7 @@ namespace DuckBank.Persistence
 
         public async Task<int> AgregarAsync(Cliente item)
         {
-            item.Id = (((int)await _collection.CountDocumentsAsync(_ => true)) + 1);
+            item.Id = (int)await _collection.CountDocumentsAsync(_ => true) + 1;
             await _collection.InsertOneAsync(item);
 
             return item.Id;
@@ -53,5 +53,10 @@ namespace DuckBank.Persistence
         {
             return (await _collection.FindAsync(x => x.Correo == correo)).FirstOrDefault();
         }
+
+        public async Task<Cliente> ObtenerPorOtrosAsync(string llave, string valor) 
+            //=> await _collection.Find(new BsonDocument($"Otros.{llave}", valor)).FirstOrDefaultAsync();
+            => await _collection.Find(x=> x.Otros[llave] == valor).FirstOrDefaultAsync();
+        
     }
 }

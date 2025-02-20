@@ -1,5 +1,5 @@
 ﻿using DuckBank.Core.Dtos;
-using DuckBank.Core.Entities;
+using DuckBank.Persistence.Entities;
 
 namespace DuckBank.BusinessLayer.Helpers
 {
@@ -69,7 +69,6 @@ namespace DuckBank.BusinessLayer.Helpers
             Telefono = entity.Telefono
         };
 
-
         public static Cliente ToEntity(this ClienteDtoIn dto) => new Cliente
         {
             EncodedKey = dto.EncodedKey,
@@ -93,5 +92,26 @@ namespace DuckBank.BusinessLayer.Helpers
             SaldoFinal = entity.SaldoFinal,
             SaldoInicial = entity.SaldoInicial
         };
+
+        public static List<MovimientoDto> ToDtos(this List<Movimiento> entities)
+        {
+            var list = entities.Select(x => x.ToDto()).ToList();
+
+            return list.OrderBy(x => x.Id).ToList();
+        }
+
+        public static List<AhorroDto> ToDtos(this List<Ahorro> entities) => entities.Select(x => new AhorroDto
+        {
+             ClienteEncodedKey = x.ClienteEncodedKey,
+             Estado = x.Estado,
+             FechaDeRegistro = x.FechaDeRegistro,
+             Guid = x.Guid,
+             Id = x.Id,
+             Interes = x.Interes,
+             Nombre = x.Nombre,
+             Otros = x.Otros,
+             Total = x.Total
+        }).ToList();
+
     }
 }

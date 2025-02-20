@@ -1,14 +1,15 @@
 ﻿using DuckBank.BusinessLayer.Helpers;
 using DuckBank.Core.Dtos;
-using DuckBank.Core.Entities;
-using DuckBank.Core.Interfaces.Repositories;
-using System;
+using DuckBank.Core.Interfaces;
+using DuckBank.Core.Interfaces.Bl;
+using DuckBank.Persistence.Entities;
 
 namespace DuckBank.BusinessLayer.Bl
 {
-    public class AhorroBl
+    public class AhorroBl: IAHorroBl
     {
         private readonly IAhorroRepositorio _repositorio;
+
         public AhorroBl(IAhorroRepositorio repositorio)
         {
             _repositorio = repositorio;
@@ -51,7 +52,7 @@ namespace DuckBank.BusinessLayer.Bl
                     EncodedKey = movimiento.EncodedKey,
                     SaldoInicial = ahorro.Total,
                     SaldoFinal = ahorro.Total + movimiento.Cantidad,
-                    Id = ahorro.Depositos.Count() + 1
+                    Id = ahorro.Depositos.Count() + ahorro.Retiros.Count() + 1
                 };
                 ahorro.Depositos.Add(movimientoEntity);
                 ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
@@ -74,21 +75,8 @@ namespace DuckBank.BusinessLayer.Bl
         }
 
         public async Task<List<AhorroDto>> ObtenerAhorrosPorClienteIdAsync(string clienteId)
-        => (await _repositorio.ObtenerListaDeAhorrosPorClienteIdAsync(clienteId))
-                .Select(x => new AhorroDto
-                {
-                    ClienteEncodedKey = x.ClienteEncodedKey,
-                    Guid = x.Guid,
-                    Id = x.Id,
-                    Interes = x.Interes,
-                    Nombre = x.Nombre,
-                    Otros = x.Otros,
-                    Estado = x.Estado,
-                    Total = x.Total,
-                    FechaDeRegistro = x.FechaDeRegistro
-                })
-                .ToList();
-
+        => (await _repositorio.ObtenerListaDeAhorrosPorClienteIdAsync(clienteId)).ToDtos();
+              
         public async Task<MovimientoDto> ObtenerMovimientoAsync(string ahorroIdEncodedKey, string encodedKey)
         {
             Ahorro ahorro;
@@ -104,6 +92,18 @@ namespace DuckBank.BusinessLayer.Bl
             
 
             return dto;
+        }
+
+        public async Task<List<MovimientoDto>> ObtenerMovimientosAsync(string ahorroId)
+        {            
+            List<Movimiento> entidades;
+            Ahorro ahorro;
+
+            ahorro = await _repositorio.ObtenerPorIdAsync(ahorroId);
+            entidades = ahorro.Retiros;
+            entidades.AddRange(ahorro.Depositos);
+
+            return entidades.ToDtos();
         }
 
         public async Task<AhorroDto> ObtenerPorIdAsync(string idGuid)
@@ -147,7 +147,7 @@ namespace DuckBank.BusinessLayer.Bl
                     EncodedKey = movimiento.EncodedKey,
                     SaldoInicial = ahorro.Total,
                     SaldoFinal = ahorro.Total - movimiento.Cantidad,
-                    Id = ahorro.Depositos.Count() + 1
+                    Id = ahorro.Depositos.Count() + ahorro.Retiros.Count() + 1
                 };
                 ahorro.Retiros.Add(movimientoEntity);
                 ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
