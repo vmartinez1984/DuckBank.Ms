@@ -15,6 +15,7 @@ namespace DuckBank.Persistence.Entities
 
         public string Concepto { get; set; }
 
+        [BsonElement("Referencia")]
         public string EncodedKey { get; set; }
 
         public decimal SaldoInicial { get; set; }
