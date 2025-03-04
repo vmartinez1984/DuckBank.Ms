@@ -8,10 +8,17 @@ namespace DuckBank.Persistence.Repositorios
 
         public IClienteRepositorio Cliente { get; }
 
-        public Repositorio(IClienteRepositorio clienteRepositorio, IAhorroRepositorio ahorroRepositorio)
+        public IUsuario Usuario { get; }
+
+        public Repositorio(
+            IClienteRepositorio clienteRepositorio
+            , IAhorroRepositorio ahorroRepositorio
+            , IUsuario usuario
+        )
         {
             Ahorro = ahorroRepositorio;
             Cliente = clienteRepositorio;
+            Usuario = usuario;
         }
     }
 }

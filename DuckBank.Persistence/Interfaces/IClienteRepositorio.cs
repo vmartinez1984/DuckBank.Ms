@@ -9,6 +9,6 @@ namespace DuckBank.Persistence.Interfaces
         Task<Cliente> ObtenerPorCorreoAsync(string correo);
         Task<Cliente> ObtenerPorIdAsync(string id);
         Task<Cliente> ObtenerPorOtrosAsync(string llave, string valor);
-        Task<List<Cliente>> ObtenerTodosAsync();
+        Task<List<Cliente>> ObtenerTodosAsync(int numeroDePagina, int numeroDeRegistros);
     }
 }
