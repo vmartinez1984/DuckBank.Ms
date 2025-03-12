@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuckBank.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+534682de4e929696ea53cf8536ebd3f437e3f718")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9aeb9b1b70258d3263bfb402c07824412c99b82d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuckBank.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuckBank.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

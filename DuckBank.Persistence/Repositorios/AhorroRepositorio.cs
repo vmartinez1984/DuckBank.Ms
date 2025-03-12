@@ -131,7 +131,7 @@ namespace DuckBank.Persistence.Repositorios
             movimiento.SaldoInicial = ahorro.Total;
             movimiento.SaldoFinal = ahorro.Total + movimiento.Cantidad;
             movimiento.Id = ahorro.Depositos.Count() + ahorro.Retiros.Count() + 1;
-            ahorro.Depositos.Add(movimiento);
+            ahorro.Retiros.Add(movimiento);
             ahorro.Total = ahorro.Depositos.Sum(x => x.Cantidad) - ahorro.Retiros.Sum(x => x.Cantidad);
             await ActualizarAsync(ahorro);
 

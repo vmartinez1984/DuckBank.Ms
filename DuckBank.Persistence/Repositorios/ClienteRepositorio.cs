@@ -39,8 +39,16 @@ namespace DuckBank.Persistence.Repositorios
             if (string.IsNullOrEmpty(textoABuscar))
                 filter = Builders<Cliente>.Filter.Where(_ => true);
             else
-                filter = Builders<Cliente>.Filter.Where(x => $"{x.Nombre} {x.PrimerApellido}".Contains(textoABuscar));
-
+            {
+                textoABuscar = textoABuscar.ToLower();
+                filter = Builders<Cliente>.Filter
+                    .Where(
+                        x => 
+                        x.Nombre.ToLower().Contains(textoABuscar) ||
+                        x.PrimerApellido.ToLower().Contains(textoABuscar) ||
+                        x.EncodedKey.ToLower().Contains(textoABuscar)
+                    );
+            }
             clientes = await _collection.Find(filter)
             //.Sort("{MuseoId:1}")
             .Skip((numeroDePagina - 1) * numeroDeRegistrosPorPagina)
