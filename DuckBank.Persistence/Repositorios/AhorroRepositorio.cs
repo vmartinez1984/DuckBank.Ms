@@ -68,6 +68,10 @@ namespace DuckBank.Persistence.Repositorios
                 ahorro = (await _collection.FindAsync(x => x.Id == id)).FirstOrDefault();
             else
                 ahorro = (await _collection.FindAsync(x => x.Guid == idGuid)).FirstOrDefault();
+            if (ahorro is null)
+                ahorro = await _collection.Find(x => x.Otros["Clabe"] == idGuid).FirstOrDefaultAsync();
+            if(ahorro is null)
+                ahorro = await _collection.Find(x => x.Otros["Oxxo"] == idGuid).FirstOrDefaultAsync();
 
             return ahorro;
         }

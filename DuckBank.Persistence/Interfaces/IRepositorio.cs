@@ -7,5 +7,7 @@
         public IClienteRepositorio Cliente { get; }
 
         public IUsuario Usuario { get; }
+
+        public IContactoRepositorio Contacto { get; }
     }
 }

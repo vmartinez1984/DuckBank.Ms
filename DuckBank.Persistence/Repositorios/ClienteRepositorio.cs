@@ -1,7 +1,6 @@
 ﻿using DuckBank.Persistence.Entities;
 using DuckBank.Persistence.Interfaces;
 using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace DuckBank.Persistence.Repositorios
@@ -64,8 +63,6 @@ namespace DuckBank.Persistence.Repositorios
 
             return paginado;
         }
-
-
 
         public async Task ActualizarAsync(Cliente item) =>
             await _collection.ReplaceOneAsync(x => x._id == item._id, item);

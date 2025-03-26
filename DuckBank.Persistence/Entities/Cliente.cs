@@ -32,5 +32,6 @@ namespace DuckBank.Persistence.Entities
         public DateTime FechaDeNacimiento { get; set; }
 
         public DateTime FechaDeRegistro { get; set; } = DateTime.Now;
+        public List<Contacto> Contactos { get; set; } = new List<Contacto>();
     }
 }

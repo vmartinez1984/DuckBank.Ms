@@ -11,6 +11,7 @@ namespace DuckBank.Persistence.Helpers
             services.AddScoped<IAhorroRepositorio, AhorroRepositorio>();
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
             services.AddScoped<IUsuario, UsuarioRepositorio>();
+            services.AddScoped<IContactoRepositorio, ContactoRepositorio>();
 
             services.AddScoped<IRepositorio, Repositorio>();
         }
