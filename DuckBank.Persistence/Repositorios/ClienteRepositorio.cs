@@ -2,6 +2,7 @@
 using DuckBank.Persistence.Interfaces;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using System;
 
 namespace DuckBank.Persistence.Repositorios
 {
@@ -42,7 +43,7 @@ namespace DuckBank.Persistence.Repositorios
                 textoABuscar = textoABuscar.ToLower();
                 filter = Builders<Cliente>.Filter
                     .Where(
-                        x => 
+                        x =>
                         x.Nombre.ToLower().Contains(textoABuscar) ||
                         x.PrimerApellido.ToLower().Contains(textoABuscar) ||
                         x.EncodedKey.ToLower().Contains(textoABuscar)
@@ -69,10 +70,15 @@ namespace DuckBank.Persistence.Repositorios
 
         public async Task<Cliente> ObtenerPorIdAsync(string idEncodedKey)
         {
+            Cliente cliente;
             if (int.TryParse(idEncodedKey, out int id))
-                return await _collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+                cliente = await _collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            else
+                cliente = await _collection.Find(x => x.EncodedKey == idEncodedKey || x.Otros["Guid"] == idEncodedKey).FirstOrDefaultAsync();
+            //if (cliente is null)
+            //    cliente = await _collection.Find(x => x.Otros["Guid"] == idEncodedKey).FirstOrDefaultAsync();
 
-            return await _collection.Find(x => x.EncodedKey == idEncodedKey).FirstOrDefaultAsync();
+            return cliente;
         }
 
         public async Task<Cliente> ObtenerPorCorreoAsync(string correo)
