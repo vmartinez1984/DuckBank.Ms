@@ -1,0 +1,13 @@
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\bin\Release\net8.0\DuckBank.Persistence.deps.json
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\bin\Release\net8.0\DuckBank.Persistence.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\bin\Release\net8.0\DuckBank.Persistence.pdb
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.csproj.AssemblyReference.cache
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.AssemblyInfoInputs.cache
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.AssemblyInfo.cs
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.sourcelink.json
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\refint\DuckBank.Persistence.dll
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\DuckBank.Persistence.pdb
+C:\Users\vmartinez\source\repos\vmartinez1984\DuckBank.Ahorros.Ms\DuckBank.Persistence\obj\Release\net8.0\ref\DuckBank.Persistence.dll
