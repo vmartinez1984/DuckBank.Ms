@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace DuckBank.Persistence.Repositorios
 {
-    public class AhorroRepositorio : IAhorroRepositorio
+    internal class AhorroRepositorio : IAhorroRepositorio
     {
         private readonly IMongoCollection<Ahorro> _collection;
 

@@ -9,7 +9,6 @@
         public IUsuario Usuario { get; }
 
         public IContactoRepositorio Contacto { get; }
-
-        public ITipoDeCuentaRepositorio TipoDeCuenta { get; } 
+        
     }
 }

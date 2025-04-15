@@ -2,7 +2,6 @@
 using DuckBank.Persistence.Interfaces;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
-using System;
 
 namespace DuckBank.Persistence.Repositorios
 {

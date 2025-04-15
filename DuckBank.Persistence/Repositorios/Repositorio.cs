@@ -11,22 +11,18 @@ namespace DuckBank.Persistence.Repositorios
         public IUsuario Usuario { get; }
 
         public IContactoRepositorio Contacto { get; }
-
-        public ITipoDeCuentaRepositorio TipoDeCuenta {  get; }
-
+               
         public Repositorio(
             IClienteRepositorio clienteRepositorio
             , IAhorroRepositorio ahorroRepositorio
             , IUsuario usuario
-            , IContactoRepositorio contacto
-            , ITipoDeCuentaRepositorio tipoDeCuenta
+            , IContactoRepositorio contacto            
         )
         {
             Ahorro = ahorroRepositorio;
             Cliente = clienteRepositorio;
             Usuario = usuario;
-            Contacto = contacto;
-            TipoDeCuenta = tipoDeCuenta;
+            Contacto = contacto;            
         }
     }
 }
