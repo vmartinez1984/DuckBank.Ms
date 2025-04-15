@@ -10,6 +10,6 @@
 
         public IContactoRepositorio Contacto { get; }
 
-        public ITipoDeCuenta TipoDeCuenta { get; } 
+        public ITipoDeCuentaRepositorio TipoDeCuenta { get; } 
     }
 }

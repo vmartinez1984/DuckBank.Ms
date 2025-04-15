@@ -2,7 +2,7 @@
 
 namespace DuckBank.Persistence.Interfaces
 {
-    public interface ITipoDeCuenta
+    public interface ITipoDeCuentaRepositorio
     {
         Task<List<TipoDeCuenta>> ObtenerTodosAsync();
     }
