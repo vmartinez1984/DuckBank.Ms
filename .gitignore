@@ -3,3 +3,15 @@
 /DuckBank.Ms/DuckBank.Api/bin
 /DuckBank.Ms/DuckBank.Api/obj
 /.vs
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.assets.cache
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.csproj.FileListAbsolute.txt
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.pdb
+/DuckBank.Persistence/obj/DuckBank.Persistence.csproj.nuget.g.props
+/.gitignore
+/.gitignore
+/.gitignore
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.AssemblyInfo.cs
+/DuckBank.Persistence/obj/Debug/net8.0/DuckBank.Persistence.AssemblyInfoInputs.cache
+/DuckBank.Persistence/DuckBank.Persistence.csproj
+/.gitignore
