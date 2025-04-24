@@ -22,6 +22,6 @@ namespace DuckBank.Persistence.Entities
 
         public decimal SaldoFinal { get; set; }
 
-        public int Id { get; set; }
+        public int Id { get; set; }        
     }
 }
